@@ -7,7 +7,8 @@ defmodule Currency.Mixfile do
      elixir: "~> 1.0",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps]
+     deps: deps,
+     docs: docs]
   end
 
   # Configuration for the OTP application
@@ -27,6 +28,16 @@ defmodule Currency.Mixfile do
   #
   # Type `mix help deps` for more examples and options
   defp deps do
-    []
+    [
+      {:ex_doc, "~> 0.7", only: :docs},
+      {:inch_ex, "~> 0.3", only: :docs}
+    ]
+  end
+
+  defp docs do
+    [
+      readme: "README.md",
+      main: Number
+    ]
   end
 end
