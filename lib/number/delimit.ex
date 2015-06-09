@@ -1,6 +1,10 @@
 defmodule Number.Delimit do
+  @moduledoc """
+  Provides functions to delimit numbers into strings.
+  """
+
   @doc """
-  Formats a number with grouped thousands using `delimiter`.
+  Formats a number into a string with grouped thousands using `delimiter`.
 
   ## Options
 
@@ -56,8 +60,9 @@ defmodule Number.Delimit do
     delimited = case is_float(number) do
                   true  -> delimit_float(number, options[:delimiter], options[:separator], options[:precision])
                   false -> delimit_integer(number, options[:delimiter])
-                end
-    "#{prefix}#{String.Chars.to_string(delimited)}"
+                end |> String.Chars.to_string
+
+    prefix <> delimited
   end
   def number_to_delimited(number, _options) do
     raise ArgumentError, "number must be a float or integer, was #{inspect number}"
@@ -86,7 +91,7 @@ defmodule Number.Delimit do
     [decimals] = :io_lib.format("~.*f", [precision, number - trunc(number)])
     decimals
     |> String.Chars.to_string
-    |> String.replace(~r/.*\./, "")
+    |> String.replace(~r/^.*\./, "")
     |> String.to_char_list
   end
 
