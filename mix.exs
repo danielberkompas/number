@@ -7,6 +7,7 @@ defmodule Currency.Mixfile do
      elixir: "~> 1.0",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     package: package,
      deps: deps,
      docs: docs]
   end
@@ -38,6 +39,17 @@ defmodule Currency.Mixfile do
     [
       readme: "README.md",
       main: Number
+    ]
+  end
+
+  defp package do
+    [
+      files: ["lib", "mix.exs", "README.md", "LICENSE"],
+      contributors: ["Daniel Berkompas"],
+      licenses: ["MIT"],
+      links: %{
+        "Github" => "https://github.com/danielberkompas/number"
+      }
     ]
   end
 end
