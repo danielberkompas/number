@@ -8,6 +8,39 @@ defmodule Number.Currency do
   @doc """
   Converts a number to a formatted currency string.
 
+  ## Options
+
+  * `:unit` - The currency symbol to use. Default: "$"
+
+  * `:precision` - The number of decimal places to include. Default: 2
+
+  * `:delimiter` - The character to use to delimit the number by thousands. 
+    Default: ","
+
+  * `:separator` - The character to use to separate the number from the decimal
+    places. Default: "."
+
+  * `:format` - The format of the number. This can be used to put the currency 
+    symbol in a different place.  See the examples for usage. There are two 
+    supported format string placeholders:
+      * `%u` - Represents the currency symbol, or unit.
+      * `%n` - Represents the number.
+
+  * `:negative_format` - The format of the number when it is negative. Uses the 
+    same formatting placeholders as the `:format` option.
+
+  Default settings for these options can be specified in the `Number`
+  application configuration.
+
+      config :number, currency: [
+                        unit: "£",
+                        precision: 2,
+                        delimiter: ",",
+                        separator: ".",
+                        format: "%u%n",           # "£30.00"
+                        negative_format: "(%u%n)" # "(£30.00)"
+                      ]
+
   ## Examples
 
       iex> Number.Currency.number_to_currency(nil)
@@ -47,7 +80,7 @@ defmodule Number.Currency do
   def number_to_currency(number, options \\ [])
   def number_to_currency(nil, _options), do: nil
   def number_to_currency(number, options) do
-    options = Dict.merge(Number.settings, options)
+    options = Dict.merge(settings, options)
     {number, format} = get_format(number, options)
     number = number_to_delimited(number, options)
 
@@ -60,4 +93,16 @@ defmodule Number.Currency do
     {abs(number), options[:negative_format] || "-#{options[:format]}"}
   end
   defp get_format(number, options), do: {number, options[:format]}
+
+  defp settings do
+    defaults = [
+      delimiter: ",",
+      separator: ".",
+      precision: 2,
+      unit: "$",
+      format: "%u%n"
+    ]
+
+    Dict.merge(defaults, Application.get_env(:number, :currency, []))
+  end
 end

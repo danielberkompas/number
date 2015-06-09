@@ -2,6 +2,25 @@ defmodule Number.Delimit do
   @doc """
   Formats a number with grouped thousands using `delimiter`.
 
+  ## Options
+
+  * `:precision` - The number of decimal places to include. Default: 2
+
+  * `:delimiter` - The character to use to delimit the number by thousands. 
+    Default: ","
+
+  * `:separator` - The character to use to separate the number from the decimal
+    places. Default: "."
+
+  Default settings for these options can be specified in the `Number`
+  application configuration.
+
+      config :number, delimiter: [
+                        precision: 3,
+                        delimiter: ",",
+                        separator: "."
+                      ]
+
   ## Examples
 
       iex> Number.Delimit.number_to_delimited(nil)
@@ -32,7 +51,7 @@ defmodule Number.Delimit do
   def number_to_delimited(number, options \\ [])
   def number_to_delimited(nil, _options), do: nil
   def number_to_delimited(number, options) when is_integer(number) or is_float(number) do
-    options   = Dict.merge(Number.settings, options)
+    options   = Dict.merge(settings, options)
     prefix    = if number < 0, do: "-", else: ""
     delimited = case is_float(number) do
                   true  -> delimit_float(number, options[:delimiter], options[:separator], options[:precision])
@@ -66,5 +85,15 @@ defmodule Number.Delimit do
     |> String.Chars.to_string
     |> String.replace(~r/.*\./, "")
     |> String.to_char_list
+  end
+
+  defp settings do
+    defaults = [
+      delimiter: ",",
+      separator: ".",
+      precision: 2,
+    ]
+
+    Dict.merge(defaults, Application.get_env(:number, :delimit, []))
   end
 end
