@@ -1,0 +1,2 @@
+defmodule Currency do
+end
