@@ -3,19 +3,19 @@
 -----BEGIN PGP SIGNATURE-----
 Comment: GPGTools - https://gpgtools.org
 
-iQIcBAABCgAGBQJVd2c+AAoJEKU82t1CbYQMVIYP/iYb0OkHMdynzN6PWcmMm76B
-Qtp+tpw4dF0P3Tc2OLckTfrX43HjSvWCUziAYDhT37SWZz87KpP164stPpzAAhRW
-3LYMl0XkfVs0BoElw9p143SRyDVZAU+fdm6OEALTrn+VIq9A99hhgMwZ3ZstLRc2
-lRCH2ps598HuMgLWn736+FjAJ8t7vM8AZg7n0ynmX0A3u+AQcpZvOITorTAyQovA
-/80DIx8BCe7Tun/Vn/b9unRXvBnoVc5ARjUKXiVzxOyDBuB/6egZb/gaY3i5Q4B+
-e5GeyNb928+5jUTqw/Dt6aytt0cH1x9zm8ZWpnKFeqmPcol4FroRJ6rKeXDG02nw
-5wvhZ+YK8cLYuRslPke5+sUFr2HFW8Rx6H2s77aQFZWe90xCP3HIyZP/MS97BFkt
-T9wk7TZPoiN8M0TXTpPGA/NhIYriydQRPQsetmQ3hXmK5cbMbtRkBPGjLv1mXP1n
-1TXfXCsHGbQ/Q1R88ntTLfppKyMX6iCdj2pgzyvR8nBT6KSWFD8sHSCl5fSZYiRy
-nJJWe7r2HARE03I9Z8XqHxiOi6NQpwxa14r8tkR7YgQHyIlOvqeUUfErK7RACjvg
-2K3+4xoIVp/+xummDVo3skbFgakc8R/FjO19rIP6h+qyuvjHsC01y/Q7aCWlBYli
-6uI4xjKI2a8GvnvQpxWZ
-=w4I2
+iQIcBAABCgAGBQJVd2hfAAoJEKU82t1CbYQMmRcQAKEzqr2XxR6J7YOw2/RND7md
+JkF2H2cE7TqkCqWx84HY7t7Ii1urgLu5qxYdRFaE74g0AFOuMmUFvc52/oFXetSq
+KVvIx1F8QSk6+O6eHnZzkeRYJ+JYJkVvjofzh/H4yF48hh+hFgRyQSGB6NGP49P7
+1VolXOXK3QElAn8lcF+D/jeBweWoxhGM6JIUyAbSo804hEeuD7hCn6omL18+zKCQ
+jd5yEJr4movsaAFLqjZczBhcZacy38Iwkf9N9I/XX3AgelCmvQBga1MlwQkf+o7G
+tDavHGOWlTl3Rk3p0N6E74uZmU0MI96m5uJY5GitaM0X7VhmBbBMOfal26VZ52/7
+IDN0VzVsZCwvHhbspgE+g1OCEHePi7YETZ8JhYDSfsiUoUnLhmYFX+cXOTYhr7pi
+ShUPoXdBp63lQEYcU7TRzmTvimUjqLDyU5w+MbU2R0wo/8UJOCpmplUK0xs8oHe3
+pbsIk63gZsDQgKE7CSxndYWEMFWb9k+V9fvFaUhPyLF+LeZdyR1v54q58bztAMM2
+K1rGjzTge2mpSrJXnaAktMMEVghfEP7RYfueam/mCV66A3G4/oVXKN5ypPTTBOeA
+MakVzLBmndGBHJcaiBiSewm1mDNzeeygMewfH//dXI9oAIAQWf4Wf6jPNzdi+q1O
+iUvZu2wTZ+g1lOXQaDMJ
+=5aFV
 -----END PGP SIGNATURE-----
 
 ```
@@ -31,11 +31,11 @@ size  exec  file                     contents
             ./                                                                                       
 39            .gitignore             6852329ebe6cd9ed388b24316ea68612637cba18d8e6d508c502bafbac0a6c41
 617           .travis.yml            4d661a691d50e6c45417f7fc2f9be85995ed428e444230e42f86d296c5978558
-153           CHANGELOG.md           42e628018fccb4a446a68c506c2e9437df5eb0ab0071c89cf4248f2dc3a398d6
+234           CHANGELOG.md           d7467c29449dbffe02cebd92918d74c74f33ec20bbc35cba7ce95c0bace8663b
 471           CONTRIBUTING.md        cb4eb249dfd382627575aa0a4d3132ebdf150aa69af779ac14b83bcae70e79c3
 1083          LICENSE                a24b375a609f6c84e82c1458fbb0383678e3f492ffb83912731fa5313831a7c9
 322           NOTICE                 9b9f53c89cde0e23ea4f718683e5f76d576d8129dc4a5b3d2597128bc61024ad
-1320          README.md              d9675ac951da629f93540c14ddcb694ab6550ae88b9f2024f255aec25b1440d7
+1320          README.md              3a92f13d36bb1628337cb7bff33847f6a01a8ed883df1f71d46557bcc2bbbc25
               config/                                                                                
 1030            config.exs           2d43b2f33a68081b675f8cedca5e74e5bdece4cd74258308326347b55ba85231
               lib/                                                                                   
@@ -43,7 +43,7 @@ size  exec  file                     contents
 3390              currency.ex        785f898ba692f1a3c744d034fd455ee4dad6558af61a7380cd5e007f3aededf9
 3270              delimit.ex         60de5f6388d8e39d2f519edeaf5aa662c53eaeb8f9cffc7b2fa4b7a071c3c66c
 955             number.ex            08600282f3188308b5f3faed9a755b5c9e5cc72bad5575990eb24fe08b206e0b
-1121          mix.exs                c8084fdd560ffa6c6a824411c4715384f596e9cd6e1a792033bb419d4457b31e
+1195          mix.exs                7559570c05cb0616fbc3df6f57fa9623720e5b97b207df3b1b703b5c294061a4
 116           mix.lock               bdabe33c837c73439778112105873fb4b16157ed3adc9d2b9b268630d8ed6cc9
               script/                                                                                
 622   x         release              3bf505bc77c52e4ff6618c63f5dc3cb176f636266abbf4aa9161d6222771663a
