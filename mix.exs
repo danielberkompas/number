@@ -4,7 +4,7 @@ defmodule Currency.Mixfile do
   def project do
     [app: :number,
      description: "Convert numbers to various string formats, such as currency",
-     version: "0.3.3",
+     version: "0.3.4",
      elixir: "~> 1.0",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
@@ -45,7 +45,7 @@ defmodule Currency.Mixfile do
 
   defp package do
     [
-      files: ["lib", "mix.exs", "README.md", "CHANGELOG.md", "SIGNED.md", "LICENSE"],
+      files: ["lib", "mix.exs", "README.md", "CHANGELOG.md", "SIGNED.md", "LICENSE", ".kbignore"],
       contributors: ["Daniel Berkompas"],
       licenses: ["MIT"],
       links: %{
