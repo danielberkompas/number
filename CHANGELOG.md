@@ -1,5 +1,13 @@
 # Change Log
 
+## [Unreleased](https://github.com/danielberkompas/number/tree/HEAD)
+
+[Full Changelog](https://github.com/danielberkompas/number/compare/v0.3.1...HEAD)
+
+**Merged pull requests:**
+
+- Improve Keybase Signature Validation [\#3](https://github.com/danielberkompas/number/pull/3) ([danielberkompas](https://github.com/danielberkompas))
+
 ## [v0.3.1](https://github.com/danielberkompas/number/tree/v0.3.1) (2015-06-10)
 
 [Full Changelog](https://github.com/danielberkompas/number/compare/v0.3.0...v0.3.1)
