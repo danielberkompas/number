@@ -3,19 +3,19 @@
 -----BEGIN PGP SIGNATURE-----
 Comment: GPGTools - https://gpgtools.org
 
-iQIcBAABCgAGBQJVeHOTAAoJEKU82t1CbYQM/YgP/1zdEsHuqgPY7NBGg0Nec+6I
-Uj0M5c3jnP5k37dUSLEjjftIeHcjQz6wpLW/8+uToyHizNetmhQmwzAy/8utjdK6
-T+KoW6auheAnyY94dsqqucWAhTXaNd246Q5L8TXb7XmiVKACc7p6D7ovV2sNAfwI
-tHgTpHpErUsS7co90O0/ijb1qZoJHKrB6SILjxSVmnhyUdSKd2aYzI5MaaobOF8K
-xvK+WiMtkZ271BK7qy16qhk/8Ail/HwHu2384lMdwY6X/FEQZe5QR5Ei2Nz52ocj
-EYLRL/4yCkmQ0S5JxdeJmzkcQjBB9YlgrmagOPuP1ZYWFH3ixZX8Li3LziuUJVVL
-y2nKRPfheP7i8mAn8QCs/EOLYLEEIMw9QGMPKClduzWL25AgCZSIyYaP3rOUmLtj
-L9CClXuS06K0V6DOilMQHzTEVD5lYNYEShxXEMXrwGkFGVjQH2bfHDM4VTVCNOtz
-nSDBA9nqHKMTq/KJpJRnafZsjeKd1+1BjO0zoGEd1j5XY0lu+6fbQ60wpehwLF4O
-x32mKo++cw94vqfLY1I39/G/ODOuVipRzCjFCY1fetwa65rLAJ4IQCegDL8x0Rf9
-0dKQ9tzLCs1aojw9u+rpukKJRRgdpJkjl+NNl6AHf9NB+bGdfXMgXUhks2baOoo8
-owfn7RcwwRoWvqpnhiZ2
-=1a4c
+iQIcBAABCgAGBQJVeHSsAAoJEKU82t1CbYQMzYsP/Ahw+amWG9av4ffZS18SgfkU
+ixHOslzRjX7QE6LXwnEPbV6QyU36w2ukhbRmpDsgjbjd/SDPw5DKOUG0W+70Z/9O
+hrJkshbwjL1buYia4TrLHQ0fQVNiRD0j9q6InLpzTh2MI0UXW4hyDzresv0wd1ur
+vrchIt876BEyA2jS6EMbTTpa4ZXmBW4TsCIMygxBJdo56dIUreryc4vPdpTZ0sTA
+Ej9I02tZIuIr4d9eEwW8+BJFnA9yEGTApBu5P/TlDEVnO+Y4VTWRfU6KWZEpDCda
+ZWoncd8lof9dyTYU/OZ08L+dLjktuGLJIfycF2NfmXhoiGIYW7FNjs3N2yskFcU3
+tUx6cC+tHZiPk564FVJGBLhkqqbg69ZXbQN7m0rHq8irGzW2Ybk0ApA4/OGAnTPV
+vG305wKct2XGTjraiYZMDKc0gzH54g+oQZUcdY6zEgbWVa9h10TuBHF/hCfMybvN
+gPcEFv7it/QMvkqcfRZWWAQ/+2aAusQ1cDFHPVnJG7YahRbgcQ91vvNXqZCQRLhg
+9hlFsPeGHXVY9ztRBFryNapUs5+HS6usmi/AoBF3+DzzsmMJbNniG0FQ4HQ5dLGB
+VAXI3b0H5Y+rQ8/PraUYYzCcnYHShuwWUW2t/Txhi0W0ioxqOdKAEw3R0ssNYY8I
+HgFfynBNn9UvpMbQCp9s
+=c7YM
 -----END PGP SIGNATURE-----
 
 ```
@@ -29,9 +29,9 @@ owfn7RcwwRoWvqpnhiZ2
 ```
 size  exec  file               contents                                                        
             ./                                                                                 
-1353          CHANGELOG.md     395c1c484f536007e3ef351c44f5b29b5b6394d171f51394eee6b9d43c04a9a6
+1366          CHANGELOG.md     67e79da0e187ef0cde7f2a024ed3e61a86302fa34e5ad3accb2f4a2391838cd8
 1083          LICENSE          a24b375a609f6c84e82c1458fbb0383678e3f492ffb83912731fa5313831a7c9
-1658          README.md        be3f550f68bab44dde27a08b37336dacde8ce197a4a177a1dc2d3b79bbdc0289
+1658          README.md        d507afcd6f6f1375078cf149218b130ba4f5f4ee3c5c6243f0efe9a9eaca90cf
               lib/                                                                             
                 number/                                                                        
 3574              currency.ex  88a6f530ed880d512c597c4f4bea890b5493f1bb59d2838e34496c0626bacfb4
@@ -39,7 +39,7 @@ size  exec  file               contents
 771               macros.ex    b42fff520c8a44a177ce83280a933104ac33e9172f3811f2afd6652c30d5de9b
 3833              phone.ex     5c2b44d13beb0e6a6cb5c999eed2342c1c369fe741e6db336033441f5bccab03
 981             number.ex      0bf4380647d693e795819f1f651ee4ff79c45ca6924db4b9a06a7a1e2fe5b53f
-1231          mix.exs          2df679615b5e5ee6d5d2fd4c32ce51a1c26664bffbc2650ba2e8f913f85b44d8
+1231          mix.exs          30d4761a7314c40df6f31a54e0ba056b5214c342c5c004312700f5205ad31a3c
 ```
 
 #### Ignore
