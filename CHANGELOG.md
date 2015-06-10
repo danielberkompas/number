@@ -1,5 +1,19 @@
 # Change Log
 
+## [Unreleased](https://github.com/danielberkompas/number/tree/HEAD)
+
+[Full Changelog](https://github.com/danielberkompas/number/compare/v0.2.1...HEAD)
+
+**Merged pull requests:**
+
+- Add `number\_to\_phone` function [\#2](https://github.com/danielberkompas/number/pull/2) ([danielberkompas](https://github.com/danielberkompas))
+
+- Update .travis.yml [\#1](https://github.com/danielberkompas/number/pull/1) ([lowks](https://github.com/lowks))
+
+## [v0.2.1](https://github.com/danielberkompas/number/tree/v0.2.1) (2015-06-09)
+
+[Full Changelog](https://github.com/danielberkompas/number/compare/v0.2.0...v0.2.1)
+
 ## [v0.2.0](https://github.com/danielberkompas/number/tree/v0.2.0) (2015-06-09)
 
 
