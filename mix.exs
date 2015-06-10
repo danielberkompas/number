@@ -3,8 +3,8 @@ defmodule Currency.Mixfile do
 
   def project do
     [app: :number,
-     description: "Convert numbers to various formats, such as currency",
-     version: "0.2.1",
+     description: "Convert numbers to various string formats, such as currency",
+     version: "0.3.0",
      elixir: "~> 1.0",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
