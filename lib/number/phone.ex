@@ -9,6 +9,13 @@ defmodule Number.Phone do
   Formats a number into a US phone number (e.g., (555) 123-9876). You can 
   customize the format in the options list.
 
+  ## Parameters
+
+  * `number` - A float or integer to convert.
+  
+  * `options` - A keyword list of options. See the documentation of all 
+    available options below for more information.
+
   ## Options
 
   * `:area_code` - Adds parentheses around the area code if `true`.

@@ -6,6 +6,13 @@ defmodule Number.Delimit do
   @doc """
   Formats a number into a string with grouped thousands using `delimiter`.
 
+  ## Parameters
+
+  * `number` - A float or integer to convert.
+  
+  * `options` - A keyword list of options. See the documentation of all 
+    available options below for more information.
+
   ## Options
 
   * `:precision` - The number of decimal places to include. Default: 2

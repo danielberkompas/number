@@ -8,6 +8,13 @@ defmodule Number.Currency do
   @doc """
   Converts a number to a formatted currency string.
 
+  ## Parameters
+
+  * `number` - A float or integer to convert.
+  
+  * `options` - A keyword list of options. See the documentation of all 
+    available options below for more information.
+
   ## Options
 
   * `:unit` - The currency symbol to use. Default: "$"
