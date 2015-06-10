@@ -49,3 +49,16 @@ end
 
 See the Hex documentation for more information about the modules provided by 
 `Number`.
+
+## Signature
+
+`Number` is signed with [Keybase](https://keybase.io) to ensure authenticity.
+If you have keybase installed, you can validate the signature from the root
+directory using:
+
+```
+keybase dir verify
+```
+
+If you have installed `Number` as a hex package, simply `cd` to `deps/number`
+and run the above command in that directory.
