@@ -30,6 +30,7 @@ defmodule Number do
     quote do
       import Number.Currency
       import Number.Delimit
+      import Number.Phone
     end
   end
 end

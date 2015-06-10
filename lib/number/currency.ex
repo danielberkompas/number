@@ -29,7 +29,7 @@ defmodule Number.Currency do
   * `:negative_format` - The format of the number when it is negative. Uses the 
     same formatting placeholders as the `:format` option.
 
-  Default settings for these options can be specified in the `Number`
+  Default config for these options can be specified in the `Number`
   application configuration.
 
       config :number, currency: [
@@ -80,7 +80,7 @@ defmodule Number.Currency do
   def number_to_currency(number, options \\ [])
   def number_to_currency(nil, _options), do: nil
   def number_to_currency(number, options) do
-    options = Dict.merge(settings, options)
+    options = Dict.merge(config, options)
     {number, format} = get_format(number, options)
     number = number_to_delimited(number, options)
 
@@ -94,7 +94,7 @@ defmodule Number.Currency do
   end
   defp get_format(number, options), do: {number, options[:format]}
 
-  defp settings do
+  defp config do
     defaults = [
       delimiter: ",",
       separator: ".",

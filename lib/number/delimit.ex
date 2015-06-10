@@ -16,7 +16,7 @@ defmodule Number.Delimit do
   * `:separator` - The character to use to separate the number from the decimal
     places. Default: "."
 
-  Default settings for these options can be specified in the `Number`
+  Default config for these options can be specified in the `Number`
   application configuration.
 
       config :number, delimiter: [
@@ -55,7 +55,7 @@ defmodule Number.Delimit do
   def number_to_delimited(number, options \\ [])
   def number_to_delimited(nil, _options), do: nil
   def number_to_delimited(number, options) when is_integer(number) or is_float(number) do
-    options   = Dict.merge(settings, options)
+    options   = Dict.merge(config, options)
     prefix    = if number < 0, do: "-", else: ""
     delimited = case is_float(number) do
                   true  -> delimit_float(number, options[:delimiter], options[:separator], options[:precision])
@@ -95,7 +95,7 @@ defmodule Number.Delimit do
     |> String.to_char_list
   end
 
-  defp settings do
+  defp config do
     defaults = [
       delimiter: ",",
       separator: ".",
