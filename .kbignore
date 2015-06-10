@@ -7,3 +7,5 @@ NOTICE
 .gitignore
 .kbignore
 CONTRIBUTING.md
+.hex
+.fetch
