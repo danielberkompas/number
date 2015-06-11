@@ -50,8 +50,8 @@ defmodule MyModule do
 end
 ```
 
-See the Hex documentation for more information about the modules provided by 
-`Number`.
+See the [Hex documentation](http://hexdocs.pm/number/) for more information 
+about the modules provided by `Number`.
 
 ## Signature
 
