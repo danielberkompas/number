@@ -71,4 +71,4 @@ signature. The `HEAD` of the project will likely always have an invalid
 signature.
 
 ## License
-MIT. See [LICENSE](/LICENSE.md) for more details.
+MIT. See [LICENSE](/LICENSE) for more details.
