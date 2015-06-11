@@ -62,3 +62,7 @@ keybase dir verify
 
 If you have installed `Number` as a hex package, simply `cd` to `deps/number`
 and run the above command in that directory.
+
+Since I don't sign every commit, only tagged versions will have a valid
+signature. The `HEAD` of the project will likely always have an invalid
+signature.
