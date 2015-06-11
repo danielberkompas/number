@@ -13,6 +13,9 @@ from Rails.
 ```elixir
 Number.Currency.number_to_currency(2034.46)
 "$2,034.46"
+
+Number.Phone.number_to_phone(1112223333, area_code: true, country_code: 1)
+"+1 (111) 222-3333"
 ```
 
 ## Installation
