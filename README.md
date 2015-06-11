@@ -66,3 +66,6 @@ and run the above command in that directory.
 Since I don't sign every commit, only tagged versions will have a valid
 signature. The `HEAD` of the project will likely always have an invalid
 signature.
+
+## License
+MIT. See [LICENSE](/LICENSE.md) for more details.
