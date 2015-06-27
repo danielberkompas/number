@@ -95,11 +95,9 @@ defmodule Number.Phone do
   end
 
   defp prepend_country_code(number, country_code, _, _) when is_blank(country_code), do: number
-  defp prepend_country_code(number, country_code, delimiter, area_code) when area_code == false do
-    "+#{country_code}#{delimiter}#{number}"
-  end
-  defp prepend_country_code(number, country_code, _, area_code) when area_code == true do
-    "+#{country_code} #{number}"
+  defp prepend_country_code(number, country_code, delimiter, area_code) do
+    if area_code, do:   "+#{country_code} #{number}",
+                  else: "+#{country_code}#{delimiter}#{number}"
   end
 
   defp append_extension(number, extension) when is_blank(extension), do: number
