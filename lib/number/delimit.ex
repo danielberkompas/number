@@ -9,21 +9,21 @@ defmodule Number.Delimit do
   ## Parameters
 
   * `number` - A float or integer to convert.
-  
-  * `options` - A keyword list of options. See the documentation of all 
+
+  * `options` - A keyword list of options. See the documentation of all
     available options below for more information.
 
   ## Options
 
   * `:precision` - The number of decimal places to include. Default: 2
 
-  * `:delimiter` - The character to use to delimit the number by thousands. 
+  * `:delimiter` - The character to use to delimit the number by thousands.
     Default: ","
 
   * `:separator` - The character to use to separate the number from the decimal
     places. Default: "."
 
-  Default config for these options can be specified in the `Number`
+  Default configuration for these options can be specified in the `Number`
   application configuration.
 
       config :number, delimiter: [
@@ -61,7 +61,7 @@ defmodule Number.Delimit do
   @spec number_to_delimited(number, list) :: String.t
   def number_to_delimited(number, options \\ [])
   def number_to_delimited(nil, _options), do: nil
-  def number_to_delimited(number, options) when is_integer(number) or is_float(number) do
+  def number_to_delimited(number, options) when is_number(number) do
     options   = Dict.merge(config, options)
     prefix    = if number < 0, do: "-", else: ""
     delimited = case is_float(number) do
@@ -91,9 +91,11 @@ defmodule Number.Delimit do
   defp delimit_float(number, delimiter, separator, precision) do
     decimals = isolate_decimals(number, precision)
     integer = number |> trunc |> delimit_integer(delimiter)
+    separator = if precision == 0, do: '', else: separator
     :lists.flatten([integer, separator, decimals])
   end
 
+  defp isolate_decimals(number, precision) when precision == 0, do: ''
   defp isolate_decimals(number, precision) do
     [decimals] = :io_lib.format("~.*f", [precision, number - trunc(number)])
     decimals
