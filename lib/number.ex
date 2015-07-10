@@ -31,6 +31,7 @@ defmodule Number do
       import Number.Currency
       import Number.Delimit
       import Number.Phone
+      import Number.Percentage
     end
   end
 end
