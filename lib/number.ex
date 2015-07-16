@@ -32,6 +32,7 @@ defmodule Number do
       import Number.Delimit
       import Number.Phone
       import Number.Percentage
+      import Number.Human
     end
   end
 end
