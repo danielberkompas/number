@@ -34,4 +34,41 @@ defmodule Number.Macros do
       unquote(value) in [" ", "", nil]
     end
   end
+
+  @doc """
+  Determines whether a number is between two given values.
+
+  ## Parameters
+
+  * `number`: the number to check. May be a `Float` or `Integer`.
+
+  * `min`: the `number` must be greater than this value.
+
+  * `max`: the `number` must be less than this value. If `false` is passed for
+    `max`, then `number_between/3` will only check that `number` is greater than
+    `min`.
+
+  ## Examples
+
+      iex> Number.Macros.number_between(10, 5, 20)
+      true
+
+      iex> Number.Macros.number_between(1, 0, false)
+      true
+
+      iex> Number.Macros.number_between(10, 20, 30)
+      false
+  """
+  defmacro number_between(number, min, max) do
+    if max do
+      quote do
+        unquote(number) >= unquote(min) and
+        unquote(number) <= unquote(max)
+      end
+    else
+      quote do
+        unquote(number) >= unquote(min)
+      end
+    end
+  end
 end
