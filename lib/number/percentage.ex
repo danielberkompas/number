@@ -30,28 +30,28 @@ defmodule Number.Percentage do
   Default configuration for these options can be specified in the `Number`
   application configuration.
 
-    config :number, percentage: [
-                      delimiter: ",",
-                      separator: ".",
-                      precision: 2
-                    ]
+      config :number, percentage: [
+                        delimiter: ",",
+                        separator: ".",
+                        precision: 2
+                      ]
 
   ## Examples
 
-    iex> Number.Percentage.number_to_percentage(100)
-    "100.000%"
+      iex> Number.Percentage.number_to_percentage(100)
+      "100.000%"
 
-    iex> Number.Percentage.number_to_percentage("98")
-    "98.000%"
+      iex> Number.Percentage.number_to_percentage("98")
+      "98.000%"
 
-    iex> Number.Percentage.number_to_percentage(100, precision: 0)
-    "100%"
+      iex> Number.Percentage.number_to_percentage(100, precision: 0)
+      "100%"
 
-    iex> Number.Percentage.number_to_percentage(1000, delimiter: '.', separator: ',')
-    "1.000,000%"
+      iex> Number.Percentage.number_to_percentage(1000, delimiter: '.', separator: ',')
+      "1.000,000%"
 
-    iex> Number.Percentage.number_to_percentage(302.24398923423, precision: 5)
-    "302.24399%"
+      iex> Number.Percentage.number_to_percentage(302.24398923423, precision: 5)
+      "302.24399%"
   """
   @spec number_to_percentage(number, Keyword.t) :: String.t
   def number_to_percentage(number, options \\ [])
