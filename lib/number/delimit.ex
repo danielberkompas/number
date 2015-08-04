@@ -95,7 +95,7 @@ defmodule Number.Delimit do
     :lists.flatten([integer, separator, decimals])
   end
 
-  defp isolate_decimals(number, precision) when precision == 0, do: ''
+  defp isolate_decimals(_number, precision) when precision == 0, do: ''
   defp isolate_decimals(number, precision) do
     [decimals] = :io_lib.format("~.*f", [precision, number - trunc(number)])
     decimals
