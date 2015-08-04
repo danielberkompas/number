@@ -17,6 +17,8 @@ defmodule Number.Human do
   @last List.last(@increments)
 
   @doc """
+  Formats and labels a number with the appropriate English word.
+
   ## Examples
 
       iex> Number.Human.number_to_human(123)
