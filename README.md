@@ -16,6 +16,15 @@ Number.Currency.number_to_currency(2034.46)
 
 Number.Phone.number_to_phone(1112223333, area_code: true, country_code: 1)
 "+1 (111) 222-3333"
+
+Number.Percentage.number_to_percentage(100, precision: 0)
+"100%"
+
+Number.Human.number_to_human(1234)
+"1.23 Thousand"
+
+Number.Delimit.number_to_delimited(12345678)
+"12,345,678"
 ```
 
 ## Installation
