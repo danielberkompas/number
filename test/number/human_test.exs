@@ -60,5 +60,8 @@ defmodule Number.HumanTest do
     assert number_to_si(1337.0e30, precision: 0) == "1337000000Y"
     assert number_to_si(1337.0e-30, precision: 4) == "0.0013y"
 
+    # handle negative numbers
+    assert number_to_si(-1337.0e8) == "-133.70G"
+
   end
 end

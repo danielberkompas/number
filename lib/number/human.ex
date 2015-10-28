@@ -133,7 +133,7 @@ defmodule Number.Human do
     if number == 0 do
       exp = 0
     else
-      exp = :math.log(number) / :math.log(base) |> Float.floor |> trunc
+      exp = :math.log(abs(number)) / :math.log(base) |> Float.floor |> trunc
     end
     exp = max(exp, -8)
     exp = min(exp, 8)
