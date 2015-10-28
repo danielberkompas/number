@@ -119,13 +119,9 @@ defmodule Number.Human do
     {-8, "y"}    # ycoto
   ]
   for {num, text} = _p <- @prefixes do
-    def exponent_to_prefix(number)
-    when number_between(number, unquote(num), unquote(num)) do
-      unquote(text)
-    end
+    def exponent_to_prefix(number) when number == unquote(num), do: unquote(text)
   end
-  def number_to_si(number, options \\ [])
-  def number_to_si(number, options) do
+  def number_to_si(number, options \\ []) when is_number(number) do
     options = Dict.merge(number_to_si_config, options)
     number_to_si(number, options[:base], options[:separator], options[:unit], options[:precision])
   end
@@ -135,8 +131,7 @@ defmodule Number.Human do
     else
       exp = :math.log(abs(number)) / :math.log(base) |> Float.floor |> trunc
     end
-    exp = max(exp, -8)
-    exp = min(exp, 8)
+    exp = exp |> max(-8) |> min(8)
     prefix = exponent_to_prefix(exp)
     scaled_number = number / :math.pow(base, exp)
     display_number = Float.to_string(scaled_number, decimals: precision)
