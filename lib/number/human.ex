@@ -135,6 +135,8 @@ defmodule Number.Human do
     else
       exp = :math.log(number) / :math.log(base) |> Float.floor |> trunc
     end
+    exp = max(exp, -8)
+    exp = min(exp, 8)
     prefix = exponent_to_prefix(exp)
     scaled_number = number / :math.pow(base, exp)
     display_number = Float.to_string(scaled_number, decimals: precision)

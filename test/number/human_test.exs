@@ -56,5 +56,9 @@ defmodule Number.HumanTest do
     # base for formatting bytes
     assert number_to_si(23.456e8, base: 1024, unit: "B") == "2.19GB"
 
+    # handle really big and really small numbers
+    assert number_to_si(1337.0e30, precision: 0) == "1337000000Y"
+    assert number_to_si(1337.0e-30, precision: 4) == "0.0013y"
+
   end
 end
