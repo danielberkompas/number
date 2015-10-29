@@ -45,6 +45,8 @@ defmodule Number.SI do
 
   * `:precision` - The number of decimal places to include. Default: 2
 
+  * `:trim` - Trim trailing zeros. Default: false
+
   ## Examples
 
       iex> Number.SI.format_number(1210000000, unit: "W")

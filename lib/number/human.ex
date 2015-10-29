@@ -61,5 +61,4 @@ defmodule Number.Human do
       number <> " " <> unquote(label)
     end
   end
-
 end
