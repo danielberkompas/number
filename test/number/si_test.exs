@@ -47,11 +47,16 @@ defmodule Number.SITest do
     assert format_number(1337.0e-1, precision: 0) == "134"
     assert format_number(1337.0e-1, precision: 0, unit: "M") == "134M"
     assert format_number(1337.0e-1, precision: 0, unit: "M", separator: " ") == "134 M"
+    assert format_number(1337.0e-9, precision: 5) == "1.33700µ"
+    assert format_number(1337.0e-9, precision: 5, trim: true) == "1.337µ"
 
     # handle zero correctly
     assert format_number(0) == "0.00"
     assert format_number(0.0, precision: 1, unit: "M", separator: " ") == "0.0 M"
     assert format_number(0.0, precision: 0, unit: "M", separator: " ") == "0 M"
+    assert format_number(0.0, precision: 2) == "0.00"
+    assert format_number(0.0, precision: 2, trim: true) == "0"
+    assert format_number(0.0, precision: 0, trim: true) == "0"
 
     # base for formatting bytes
     assert format_number(23.456e8, base: 1024, unit: "B") == "2.19GB"

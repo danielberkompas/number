@@ -56,6 +56,9 @@ defmodule Number.SI do
       iex> Number.SI.format_number(1210000000, unit: "W", precision: 3, separator: " ")
       "1.210 GW"
 
+      iex> Number.SI.format_number(1210000000, unit: "W", precision: 5, trim: true)
+      "1.21GW"
+
       iex> Number.SI.format_number(1210000000)
       "1.21G"
 
@@ -63,14 +66,12 @@ defmodule Number.SI do
   @spec format_number(number, list) :: String.t
   def format_number(number, options \\ []) when is_number(number) do
     options = Dict.merge(config, options)
-    format_number(number, options[:base], options[:separator], options[:unit], options[:precision])
-  end
-  defp format_number(number, base, separator, unit, precision) do
-    exp = compute_exponent(number, base)
+    exp = compute_exponent(number, options[:base])
     prefix = exponent_to_prefix(exp)
-    scaled_number = number / :math.pow(base, exp)
-    display_number = Float.to_string(scaled_number, decimals: precision)
-    display_number <> separator <> prefix <> unit
+    scaled_number = number / :math.pow(options[:base], exp)
+    display_number = Float.to_string(scaled_number, decimals: options[:precision])
+    if options[:trim], do: display_number = trim(display_number)
+    display_number <> options[:separator] <> prefix <> options[:unit]
   end
 
   defp compute_exponent(number, _) when number == 0, do: 0
@@ -85,7 +86,12 @@ defmodule Number.SI do
   for {num, text} = _p <- @prefixes do
     def exponent_to_prefix(number) when number == unquote(num), do: unquote(text)
   end
-  
+
+  defp trim(display_number) when display_number == "0", do: "0"
+  defp trim(display_number) do
+    display_number |> String.rstrip(?0) |> String.rstrip(?.)
+  end
+
   defp config do
     defaults = [
       base: 1000,
