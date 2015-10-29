@@ -89,9 +89,12 @@ defmodule Number.SI do
     def exponent_to_prefix(number) when number == unquote(num), do: unquote(text)
   end
 
-  defp trim(display_number) when display_number == "0", do: "0"
   defp trim(display_number) do
-    display_number |> String.rstrip(?0) |> String.rstrip(?.)
+    if String.contains?(display_number, ".") do
+      display_number |> String.rstrip(?0) |> String.rstrip(?.)
+    else
+      display_number
+    end
   end
 
   defp config do
