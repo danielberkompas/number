@@ -47,6 +47,14 @@ defmodule Number.SI do
 
   * `:trim` - Trim trailing zeros. Default: false
 
+  Default configuration for these options can be specified in the `Number`
+  application configuration.
+      config :number, si: [
+                        separator: " ",
+                        precision: 4,
+                        trim: true
+                      ]
+
   ## Examples
 
       iex> Number.SI.format_number(1210000000, unit: "W")
