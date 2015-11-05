@@ -57,24 +57,24 @@ defmodule Number.SI do
 
   ## Examples
 
-      iex> Number.SI.format_number(1210000000, unit: "W")
+      iex> Number.SI.format(1210000000, unit: "W")
       "1.21GW"
 
-      iex> Number.SI.format_number(1210000000, unit: "W", precision: 1)
+      iex> Number.SI.format(1210000000, unit: "W", precision: 1)
       "1.2GW"
 
-      iex> Number.SI.format_number(1210000000, unit: "W", precision: 3, separator: " ")
+      iex> Number.SI.format(1210000000, unit: "W", precision: 3, separator: " ")
       "1.210 GW"
 
-      iex> Number.SI.format_number(1210000000, unit: "W", precision: 5, trim: true)
+      iex> Number.SI.format(1210000000, unit: "W", precision: 5, trim: true)
       "1.21GW"
 
-      iex> Number.SI.format_number(1210000000)
+      iex> Number.SI.format(1210000000)
       "1.21G"
 
   """
-  @spec format_number(number, list) :: String.t
-  def format_number(number, options \\ []) when is_number(number) do
+  @spec format(number, list) :: String.t
+  def format(number, options \\ []) when is_number(number) do
     options = Dict.merge(config, options)
     exp = compute_exponent(number, options[:base])
     prefix = exponent_to_prefix(exp)
