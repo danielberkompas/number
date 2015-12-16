@@ -1,5 +1,20 @@
 # Change Log
 
+## [Unreleased](https://github.com/danielberkompas/number/tree/HEAD)
+
+[Full Changelog](https://github.com/danielberkompas/number/compare/v0.4.0...HEAD)
+
+**Closed issues:**
+
+- number\_to\_human skips some numbers [\#10](https://github.com/danielberkompas/number/issues/10)
+
+**Merged pull requests:**
+
+- Fix number\_to\_human rounding and skipping errors [\#11](https://github.com/danielberkompas/number/pull/11) ([danielberkompas](https://github.com/danielberkompas))
+- Adds SI.format [\#9](https://github.com/danielberkompas/number/pull/9) ([stereosteve](https://github.com/stereosteve))
+- Add examples of module usage to README [\#7](https://github.com/danielberkompas/number/pull/7) ([danielberkompas](https://github.com/danielberkompas))
+- Prettify Docs [\#6](https://github.com/danielberkompas/number/pull/6) ([danielberkompas](https://github.com/danielberkompas))
+
 ## [v0.4.0](https://github.com/danielberkompas/number/tree/v0.4.0) (2015-08-04)
 [Full Changelog](https://github.com/danielberkompas/number/compare/v0.3.4...v0.4.0)
 
@@ -17,7 +32,7 @@
 ## [v0.3.2](https://github.com/danielberkompas/number/tree/v0.3.2) (2015-06-10)
 [Full Changelog](https://github.com/danielberkompas/number/compare/v0.3.1...v0.3.2)
 
-**Merged pull requests:**
+**Implemented enhancements:**
 
 - Improve Keybase Signature Validation [\#3](https://github.com/danielberkompas/number/pull/3) ([danielberkompas](https://github.com/danielberkompas))
 
@@ -27,9 +42,12 @@
 ## [v0.3.0](https://github.com/danielberkompas/number/tree/v0.3.0) (2015-06-10)
 [Full Changelog](https://github.com/danielberkompas/number/compare/v0.2.1...v0.3.0)
 
-**Merged pull requests:**
+**Implemented enhancements:**
 
 - Add `number\_to\_phone` function [\#2](https://github.com/danielberkompas/number/pull/2) ([danielberkompas](https://github.com/danielberkompas))
+
+**Merged pull requests:**
+
 - Update .travis.yml [\#1](https://github.com/danielberkompas/number/pull/1) ([lowks](https://github.com/lowks))
 
 ## [v0.2.1](https://github.com/danielberkompas/number/tree/v0.2.1) (2015-06-09)
