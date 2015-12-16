@@ -5,8 +5,8 @@ defmodule Number.Human do
 
   import Number.Delimit, only: [number_to_delimited: 2]
   import Number.Macros, only: [number_between: 3]
-  
-  @increments [ 
+
+  @increments [
     {"Thousand", 1_000},
     {"Million",  1_000_000},
     {"Billion",  1_000_000_000},
@@ -27,8 +27,8 @@ defmodule Number.Human do
       iex> Number.Human.number_to_human(1234)
       "1.23 Thousand"
 
-      iex> Number.Human.number_to_human(12345)
-      "12.35 Thousand"
+      iex> Number.Human.number_to_human(999001)
+      "999.00 Thousand"
 
       iex> Number.Human.number_to_human(1234567)
       "1.23 Million"
@@ -53,9 +53,9 @@ defmodule Number.Human do
     to_string(number)
   end
   for {label, min} = increment <- @increments do
-    max = if increment == @last, do: false, else: min * 999
+    max = if increment == @last, do: false, else: min * 999.999
 
-    def number_to_human(number, options) 
+    def number_to_human(number, options)
     when number_between(number, unquote(min), unquote(max)) do
       number = number_to_delimited(number / unquote(min), options)
       number <> " " <> unquote(label)

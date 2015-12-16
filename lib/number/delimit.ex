@@ -37,6 +37,9 @@ defmodule Number.Delimit do
       iex> Number.Delimit.number_to_delimited(nil)
       nil
 
+      iex> Number.Delimit.number_to_delimited(998.999)
+      "999.00"
+
       iex> Number.Delimit.number_to_delimited(-234234.234)
       "-234,234.23"
 
@@ -89,6 +92,7 @@ defmodule Number.Delimit do
   end
 
   defp delimit_float(number, delimiter, separator, precision) do
+    number = Float.round(number, precision)
     decimals = isolate_decimals(number, precision)
     integer = number |> trunc |> delimit_integer(delimiter)
     separator = if precision == 0, do: '', else: separator
