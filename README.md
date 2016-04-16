@@ -1,9 +1,4 @@
-Number
-========
-
-[![Build Status](https://travis-ci.org/danielberkompas/number.svg)](https://travis-ci.org/danielberkompas/number)
-[![Hex Version](http://img.shields.io/hexpm/v/number.svg)](https://hex.pm/packages/number)
-[![Inline docs](http://inch-ci.org/github/danielberkompas/number.svg?branch=master)](http://inch-ci.org/github/danielberkompas/number)
+[![Deps Status](https://beta.hexfaktor.org/badge/all/github/danielberkompas/number.svg)](https://beta.hexfaktor.org/github/danielberkompas/number)
 
 `Number` is a pretentiously-named [Elixir](https://github.com/elixir-lang/elixir)
 library which provides functions to convert numbers into a variety of different 
