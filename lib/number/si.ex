@@ -80,8 +80,8 @@ defmodule Number.SI do
     prefix = exponent_to_prefix(exp)
     scaled_number = number / :math.pow(options[:base], exp)
     display_number = Float.to_string(scaled_number, decimals: options[:precision])
-    if options[:trim], do: display_number = trim(display_number)
-    display_number <> options[:separator] <> prefix <> options[:unit]
+    final_number = if options[:trim], do: trim(display_number), else: display_number
+    final_number <> options[:separator] <> prefix <> options[:unit]
   end
 
   defp compute_exponent(number, _) when number == 0, do: 0
