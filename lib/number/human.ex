@@ -33,11 +33,23 @@ defmodule Number.Human do
 
       iex> Number.Human.number_to_human(1234567890123456789)
       "1,234.57 Quadrillion"
+
+      iex> Number.Human.number_to_human(Decimal.new(5000.0))
+      "5.00 Thousand"
   """
   def number_to_human(number, options \\ [])
 
-  def number_to_human(number, _options) when not is_number(number) do
-    raise ArgumentError, "number must be a float or integer, was #{inspect number}"
+  def number_to_human(number, options) when not is_number(number) do
+    if Number.Conversion.impl_for(number) do
+      number
+      |> Number.Conversion.to_float
+      |> number_to_human(options)
+    else
+      raise ArgumentError, """
+      number must be a float or integer, or implement `Number.Conversion` protocol,
+      was #{inspect number}"
+      """
+    end
   end
 
   def number_to_human(number, options)

@@ -60,22 +60,28 @@ defmodule Number.Delimit do
 
       iex> Number.Delimit.number_to_delimited(98765432.98, delimiter: " ", separator: ",")
       "98 765 432,98"
+
+      iex> Number.Delimit.number_to_delimited(Decimal.new(9998.2))
+      "9,998.20"
   """
   @spec number_to_delimited(number, list) :: String.t
   def number_to_delimited(number, options \\ [])
   def number_to_delimited(nil, _options), do: nil
-  def number_to_delimited(number, options) when is_number(number) do
+  def number_to_delimited(number, options) do
     options   = Dict.merge(config, options)
     prefix    = if number < 0, do: "-", else: ""
-    delimited = case is_float(number) do
-                  true  -> delimit_float(number, options[:delimiter], options[:separator], options[:precision])
-                  false -> delimit_integer(number, options[:delimiter])
-                end |> String.Chars.to_string
+    delimited =
+      case is_integer(number) do
+        true ->
+          delimit_integer(number, options[:delimiter])
+        false ->
+          number
+          |> Number.Conversion.to_float
+          |> delimit_float(options[:delimiter], options[:separator], options[:precision])
+      end
 
+    delimited = String.Chars.to_string(delimited)
     prefix <> delimited
-  end
-  def number_to_delimited(number, _options) do
-    raise ArgumentError, "number must be a float or integer, was #{inspect number}"
   end
 
   defp delimit_integer(number, delimiter) do

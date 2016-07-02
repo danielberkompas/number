@@ -11,8 +11,8 @@ defmodule Number.Currency do
   ## Parameters
 
   * `number` - A float or integer to convert.
-  
-  * `options` - A keyword list of options. See the documentation of all 
+
+  * `options` - A keyword list of options. See the documentation of all
     available options below for more information.
 
   ## Options
@@ -21,19 +21,19 @@ defmodule Number.Currency do
 
   * `:precision` - The number of decimal places to include. Default: 2
 
-  * `:delimiter` - The character to use to delimit the number by thousands. 
+  * `:delimiter` - The character to use to delimit the number by thousands.
     Default: ","
 
   * `:separator` - The character to use to separate the number from the decimal
     places. Default: "."
 
-  * `:format` - The format of the number. This can be used to put the currency 
-    symbol in a different place.  See the examples for usage. There are two 
+  * `:format` - The format of the number. This can be used to put the currency
+    symbol in a different place.  See the examples for usage. There are two
     supported format string placeholders:
       * `%u` - Represents the currency symbol, or unit.
       * `%n` - Represents the number.
 
-  * `:negative_format` - The format of the number when it is negative. Uses the 
+  * `:negative_format` - The format of the number when it is negative. Uses the
     same formatting placeholders as the `:format` option.
 
   Default config for these options can be specified in the `Number`
@@ -82,6 +82,9 @@ defmodule Number.Currency do
 
       iex> Number.Currency.number_to_currency(1234567890.50, unit: "R$", separator: ",", delimiter: "", format: "%n %u")
       "1234567890,50 R$"
+
+      iex> Number.Currency.number_to_currency(Decimal.new(50.0))
+      "$50.00"
   """
   @spec number_to_currency(number, list) :: String.t
   def number_to_currency(number, options \\ [])

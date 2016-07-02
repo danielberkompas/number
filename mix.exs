@@ -19,6 +19,7 @@ defmodule Currency.Mixfile do
 
   defp deps do
     [
+      {:decimal, "~> 1.0", optional: true},
       {:ex_doc, "~> 0.11", only: :docs},
       {:inch_ex, "~> 0.3", only: :docs}
     ]
