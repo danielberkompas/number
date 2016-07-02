@@ -1,5 +1,22 @@
 # Change Log
 
+## [Unreleased](https://github.com/danielberkompas/number/tree/HEAD)
+
+[Full Changelog](https://github.com/danielberkompas/number/compare/v0.4.1...HEAD)
+
+**Fixed bugs:**
+
+- Number.Conversion is not used internally [\#12](https://github.com/danielberkompas/number/issues/12)
+
+**Closed issues:**
+
+- Module not available in releases if not listed in :applications [\#14](https://github.com/danielberkompas/number/issues/14)
+
+**Merged pull requests:**
+
+- \[\#12\] Use Number.Conversion properly, support Decimal [\#15](https://github.com/danielberkompas/number/pull/15) ([danielberkompas](https://github.com/danielberkompas))
+- Don't set display\_number inside conditional [\#13](https://github.com/danielberkompas/number/pull/13) ([bratsche](https://github.com/bratsche))
+
 ## [v0.4.1](https://github.com/danielberkompas/number/tree/v0.4.1) (2015-12-16)
 [Full Changelog](https://github.com/danielberkompas/number/compare/v0.4.0...v0.4.1)
 

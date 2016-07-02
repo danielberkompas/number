@@ -3,19 +3,19 @@
 -----BEGIN PGP SIGNATURE-----
 Comment: GPGTools - https://gpgtools.org
 
-iQIcBAABCgAGBQJWcOpbAAoJEKU82t1CbYQMLQ8P/iVnydzDQ0xswG95N30ed9lM
-Sims2EvPW+93s0hOCy9YQU6ggRTADPKPBxEd/JFctRXUIcUZ/KiUN8YguxAZ1w2w
-3rgxrD56glMZrZcCpCDd90n/YmdCSW9DtePeWqY/tHdynvtK7e4ovFFAvztjpL7A
-wXa8S3cs7dT/7oS2SuZMfqvZNmjvUhRrdNu7bazBp/SIdIBElR7oo5YoWkLM6i32
-8N/bvlFCYm18TaXPuiUQMxfUHf1IDYf2RGJsG1YR8PuW7uSXjZvSDAzMmu1ndr9f
-ZO+73S2ngOpkx4j1wJJ/vTIsRU5+ZFWlJBntsp6f6krQBT8UnyB8FY0Khuq+3guM
-jAZkJ8UU5kkwMFr2fhoYLVZXEsQLsuIibZJmAkQZos68X8gubMptUVHNfTW5DJ1T
-xJqxo5FbNrHiJo7hHrJPbswHamUjnkyAA9UKono+spBeFIfcdDSVJSUAsJV84nlp
-jdZs1oXs2Zs/WDOXnFh7hSzRPqWplEaiQ+Fdu/Z5GkuTDyrg85EHQJ4Dp8lx8r3C
-xvgY06yWvfH+Hzo8ExEOD1Yb4ybCXfC08CFR5RgFysNUzl8X2qlgQXDkUQz2pSrY
-qUUYfxVu4nkZrqTp9muUbqsIPYCfSmSg/gOHf+TgvvXUNe2mGObcrug3bD1635YD
-AltRcH0PFzV2mMs0UiLu
-=+zz3
+iQIcBAABCgAGBQJXeEVpAAoJEKU82t1CbYQMupgQAK3+8Y/qeWPcNPaILSnqNxOV
+meXQzAw6WxX58zhl0Se2qrzbm0Iq72QqwesMWKEnqbALjYPnG5hSTPBNdUWGEdLl
+5LLqVp1Smh4g+UjeBx1lBvrVEjEP78UL6fS+GdK90K1gcBd4Bl0CvoQiHB4nUbXU
+BWNgKVRYzky5x3FtZcY1tJK+sAkDWXAJu9x8MpZnX7qBwfiwODihWb8CF3fGq+Sa
+C/I8IqXhC5DT3H0lvP3hrriHc52cE38JbKwsJSGZgJSx3aD68gpaEukV0YNRg5hs
+EAY2TR0xU0OYaM7hMYnwCkcKKz8pfNQweqD8jg+2chrQvYJAVYUQ95fUgHTICNGD
+s6CoRo/UsSDQAXsnEfNBgSV9/PEnHqCqo183wo7+gDGwS6+WLZu9NzphJ8qE5Sed
+qBkNSFZPkV/YOVnjwYYiBt1QCTSQ/FA+m1b8m6/2wPajDPWQm9jMrH5e7oRX1YYb
+KYZRNE+SbvEpraOgVsedmiaemx4+2Bm5cM9Q9DgxLcRuopib5xDGjm09fW3Fmwbp
+4VlekpGzEnF8DuLcZLMLeQ5PvFDwaHt/W1U91tCTEDEn0MKKcig9f2YQ0OJEC2ZQ
+tK4mQFHxPxoznvN5TMQk7OLPa6OAcm4HyC74DlPxK+x781DMZ1fw+ZMEYDTf5qEK
+tvU0rAFg5ojpdJKbnYla
+=EE7J
 -----END PGP SIGNATURE-----
 
 ```
@@ -30,21 +30,21 @@ AltRcH0PFzV2mMs0UiLu
 size  exec  file                 contents                                                        
             ./                                                                                   
 30            .vimrc             5a206099fe65252763030009b84748031bd2c0395b50cf06440e536005dd5a7e
-3101          CHANGELOG.md       a16595eb550bf9c00fc1d1122bd43a947d3d5deaaa0ab88b5a5b201eb92a8895
-1083          LICENSE            a24b375a609f6c84e82c1458fbb0383678e3f492ffb83912731fa5313831a7c9
-2175          README.md          9ade3c6b5df776c612a322ca1f52e2a5f46760d236827c1e3dd7764a1e21c145
+3882          CHANGELOG.md       cc018e2ccd415ad53496d726b2ae0c5cf6d9480210e632ef83b8578316356d6a
               lib/                                                                               
                 number/                                                                          
-561               conversion.ex  f8426227abedb29453d70c2c1b307361040c3359589ff5ed7b70ab10ab18e360
-3574              currency.ex    88a6f530ed880d512c597c4f4bea890b5493f1bb59d2838e34496c0626bacfb4
-3682              delimit.ex     55e792e82ada92174b5693f17b0abeddf1adfd716813055fa48a70b8c69e7554
-1786              human.ex       bc89ce805334c9537fdbf8df57da44de20b190970174487a82d6cb0e8090bf4d
-1628              macros.ex      3ba0a0112d6858411e735812b865691223dc1fc5db5b9b259b1c6443f5d36e10
-2033              percentage.ex  6ccedca5b5fa3703ec95fd6fc7551ff5bf0a3c6452a000f81a56eddff0b942de
+784               conversion.ex  5b86923fb80810327c23b899939887b4f74de33e9237fa844378488cdf770010
+3648              currency.ex    c6b9f86feb37ae9dbf724fef8856d1aa94bdefb8549da91fc79068eebc88d6cb
+3680              delimit.ex     6da2db785a51112f90231d4143bf44b687aad9cde0a616ad22f6bed60c8d3d5f
+2399              human.ex       1ae8772d6ffd3c5fe78aca8c663ae47f8da7c803169d470d0cd918d1e1154610
+650               macros.ex      b7864dab20e759f475f07a36e8e7604b1235f089af73b3af339062fb4e3faa49
+2134              percentage.ex  178638785904c9ef9fc1c63fc7bbdc1ae0bb8a3a1ec306f17ddc0b821936849c
 3754              phone.ex       412befb970fda53269cd6644f06decc6ddc9a43d29b8080450dab4ee8a2af752
-3205              si.ex          9d23db7fc4d21f63c4f9a39d91648f975c7c8da5cddb9a856b8d2169db8b1177
+3673              si.ex          1280c3edbc954ed74b984214e80a08c605de40034962205fe5e87488c45bf8f3
 1038            number.ex        43d6284deb45e077cd7afc8d804eecc2f40bc0d644b06b41755ed66d42320c58
-901           mix.exs            77d8a6d49fc195b15c305bb203a5f40a0b39a26dccfa00aec06f9f06737aed68
+1083          LICENSE            a24b375a609f6c84e82c1458fbb0383678e3f492ffb83912731fa5313831a7c9
+945           mix.exs            ae83a69baf100bcf1d062f997c775a4c29af2b03ce2c6b60fd12cf0b5f7dea56
+2094          README.md          15fad32d15a2fec190f4ae57fc88d2c372381fbdbbd4e1c27a9df1818a3c5484
 ```
 
 #### Ignore
