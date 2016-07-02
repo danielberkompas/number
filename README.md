@@ -1,7 +1,7 @@
 [![Deps Status](https://beta.hexfaktor.org/badge/all/github/danielberkompas/number.svg)](https://beta.hexfaktor.org/github/danielberkompas/number)
 
 `Number` is a pretentiously-named [Elixir](https://github.com/elixir-lang/elixir)
-library which provides functions to convert numbers into a variety of different 
+library which provides functions to convert numbers into a variety of different
 formats. Ultimately, it aims to be a partial or complete clone of [ActionView::Helpers::NumberHelper](http://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html)
 from Rails.
 
@@ -32,7 +32,13 @@ defp deps do
 end
 ```
 
-Then run `mix deps.get` to install.
+Then run `mix deps.get` to install. Make sure you also add it to your application list in `mix.exs`:
+
+```elixir
+def application do
+  [applications: [:number]]
+end
+```
 
 ## Usage
 
@@ -54,7 +60,7 @@ defmodule MyModule do
 end
 ```
 
-See the [Hex documentation](http://hexdocs.pm/number/) for more information 
+See the [Hex documentation](http://hexdocs.pm/number/) for more information
 about the modules provided by `Number`.
 
 ## Signature
