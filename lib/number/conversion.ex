@@ -21,3 +21,15 @@ end
 defimpl Number.Conversion, for: Integer do
   def to_float(value), do: value * 1.0
 end
+
+if Code.ensure_loaded?(Decimal) do
+  defimpl Number.Conversion, for: Decimal do
+    def to_float(value) do
+      {float, _} =
+        value
+        |> Decimal.to_string
+        |> Float.parse
+      float
+    end
+  end
+end

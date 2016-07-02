@@ -72,9 +72,12 @@ defmodule Number.SI do
       iex> Number.SI.number_to_si(1210000000)
       "1.21G"
 
+      iex> Number.SI.number_to_si(Decimal.new(1210000000))
+      "1.21G"
   """
   @spec number_to_si(number, list) :: String.t
-  def number_to_si(number, options \\ []) when is_number(number) do
+  def number_to_si(number, options \\ [])
+  def number_to_si(number, options) when is_number(number) do
     options = Dict.merge(config, options)
     exp = compute_exponent(number, options[:base])
     prefix = exponent_to_prefix(exp)
@@ -82,6 +85,18 @@ defmodule Number.SI do
     display_number = Float.to_string(scaled_number, decimals: options[:precision])
     final_number = if options[:trim], do: trim(display_number), else: display_number
     final_number <> options[:separator] <> prefix <> options[:unit]
+  end
+  def number_to_si(number, options) do
+    if Number.Conversion.impl_for(number) do
+      number
+      |> Number.Conversion.to_float
+      |> number_to_si(options)
+    else
+      raise ArgumentError, """
+      number must be a float or integer, or implement `Number.Conversion` protocol,
+      was #{inspect number}"
+      """
+    end
   end
 
   defp compute_exponent(number, _) when number == 0, do: 0
