@@ -1,9 +1,8 @@
 language: elixir
 elixir:
-  - 1.0.3
-  - 1.0.4
+  - 1.2.0
 otp_release:
-  - 17.4
+  - 18.1
 before_script:
   - export PLT_FILENAME=elixir-${TRAVIS_ELIXIR_VERSION}_$TRAVIS_OTP_RELEASE.plt
   - export PLT_LOCATION=/home/travis/$PLT_FILENAME
