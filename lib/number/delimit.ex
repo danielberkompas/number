@@ -43,6 +43,12 @@ defmodule Number.Delimit do
       iex> Number.Delimit.number_to_delimited(-234234.234)
       "-234,234.23"
 
+      iex> Number.Delimit.number_to_delimited("998.999")
+      "999.00"
+
+      iex> Number.Delimit.number_to_delimited("-234234.234")
+      "-234,234.23"
+
       iex> Number.Delimit.number_to_delimited(12345678)
       "12,345,678"
 
@@ -68,15 +74,15 @@ defmodule Number.Delimit do
   def number_to_delimited(number, options \\ [])
   def number_to_delimited(nil, _options), do: nil
   def number_to_delimited(number, options) do
+    float     = number |> Number.Conversion.to_float
     options   = Dict.merge(config, options)
-    prefix    = if number < 0, do: "-", else: ""
+    prefix    = if float < 0, do: "-", else: ""
     delimited =
       case is_integer(number) do
         true ->
           delimit_integer(number, options[:delimiter])
         false ->
-          number
-          |> Number.Conversion.to_float
+          float
           |> delimit_float(options[:delimiter], options[:separator], options[:precision])
       end
 
