@@ -18,7 +18,7 @@ defimpl Number.Conversion, for: BitString do
 
   def to_decimal(value) do
     string = String.Chars.to_string(value)
-    Decimal.new(value)
+    Decimal.new(string)
   end
 end
 
