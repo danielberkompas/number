@@ -4,6 +4,7 @@ defmodule Number.Human do
   """
 
   import Number.Delimit, only: [number_to_delimited: 2]
+  import Decimal, only: [cmp: 2]
 
   @doc """
   Formats and labels a number with the appropriate English word.
@@ -11,7 +12,7 @@ defmodule Number.Human do
   ## Examples
 
       iex> Number.Human.number_to_human(123)
-      "123"
+      "123.00"
 
       iex> Number.Human.number_to_human(1234)
       "1.23 Thousand"
@@ -34,15 +35,15 @@ defmodule Number.Human do
       iex> Number.Human.number_to_human(1234567890123456789)
       "1,234.57 Quadrillion"
 
-      iex> Number.Human.number_to_human(Decimal.new(5000.0))
+      iex> Number.Human.number_to_human(Decimal.new("5000.0"))
       "5.00 Thousand"
   """
   def number_to_human(number, options \\ [])
 
-  def number_to_human(number, options) when not is_number(number) do
+  def number_to_human(number, options) when not is_map(number) do
     if Number.Conversion.impl_for(number) do
       number
-      |> Number.Conversion.to_float
+      |> Number.Conversion.to_decimal
       |> number_to_human(options)
     else
       raise ArgumentError, """
@@ -52,37 +53,36 @@ defmodule Number.Human do
     end
   end
 
-  def number_to_human(number, options)
-  when number > 999 and number < 1_000_000 do
-    delimit(number, 1_000, "Thousand", options)
+  def number_to_human(number, options) do
+    cond do
+      cmp(number, ~d(999)) == :gt && cmp(number, ~d(1_000_000)) == :lt ->
+        delimit(number, ~d(1_000), "Thousand", options)
+      cmp(number, ~d(1_000_000)) in [:gt, :eq] and cmp(number, ~d(1_000_000_000)) == :lt ->
+        delimit(number, ~d(1_000_000), "Million", options)
+      cmp(number, ~d(1_000_000_000)) in [:gt, :eq] and cmp(number, ~d(1_000_000_000_000)) == :lt ->
+        delimit(number, ~d(1_000_000_000), "Billion", options)
+      cmp(number, ~d(1_000_000_000_000)) in [:gt, :eq] and cmp(number, ~d(1_000_000_000_000_000)) == :lt ->
+        delimit(number, ~d(1_000_000_000_000), "Trillion", options)
+      cmp(number, ~d(1_000_000_000_000_000)) in [:gt, :eq] ->
+        delimit(number, ~d(1_000_000_000_000_000), "Quadrillion", options)
+      true ->
+        number_to_delimited(number, options)
+    end
   end
 
-  def number_to_human(number, options)
-  when number >= 1_000_000 and number < 1_000_000_000 do
-    delimit(number, 1_000_000, "Million", options)
-  end
-
-  def number_to_human(number, options)
-  when number >= 1_000_000_000 and number < 1_000_000_000_000 do
-    delimit(number, 1_000_000_000, "Billion", options)
-  end
-
-  def number_to_human(number, options)
-  when number >= 1_000_000_000_000 and number < 1_000_000_000_000_000 do
-    delimit(number, 1_000_000_000_000, "Trillion", options)
-  end
-
-  def number_to_human(number, options)
-  when number >= 1_000_000_000_000_000 do
-    delimit(number, 1_000_000_000_000_000, "Quadrillion", options)
-  end
-
-  def number_to_human(number, _options) do
-    to_string(number)
+  defp sigil_d(number, _modifiers) do
+    number
+    |> String.replace("_", "")
+    |> String.to_integer
+    |> Decimal.new
   end
 
   defp delimit(number, divisor, label, options) do
-    number = number_to_delimited(number / divisor, options)
+    number =
+      number
+      |> Decimal.div(divisor)
+      |> number_to_delimited(options)
+
     number <> " " <> label
   end
 end

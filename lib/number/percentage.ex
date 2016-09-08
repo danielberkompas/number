@@ -4,7 +4,6 @@ defmodule Number.Percentage do
   """
 
   import Number.Delimit, only: [number_to_delimited: 2]
-  import Number.Conversion, only: [to_float: 1]
 
   @doc """
   Formats a number into a percentage string.
@@ -60,11 +59,7 @@ defmodule Number.Percentage do
   def number_to_percentage(number, options \\ [])
   def number_to_percentage(number, options) do
     options = Dict.merge(config, options)
-
-    number = number
-             |> to_float
-             |> number_to_delimited(options)
-
+    number = number_to_delimited(number, options)
     number <> "%"
   end
 

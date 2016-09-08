@@ -54,13 +54,13 @@ defmodule Number.Currency do
       nil
 
       iex> Number.Currency.number_to_currency(1000)
-      "$1,000"
+      "$1,000.00"
 
       iex> Number.Currency.number_to_currency(1000, unit: "£")
-      "£1,000"
+      "£1,000.00"
 
       iex> Number.Currency.number_to_currency(-1000)
-      "-$1,000"
+      "-$1,000.00"
 
       iex> Number.Currency.number_to_currency(-234234.23)
       "-$234,234.23"
