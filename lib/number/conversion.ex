@@ -3,6 +3,9 @@ defprotocol Number.Conversion do
 
   @doc "Converts a value to a Float."
   def to_float(value)
+
+  @doc "Converts a value to a Decimal."
+  def to_decimal(value)
 end
 
 defimpl Number.Conversion, for: BitString do
@@ -12,14 +15,27 @@ defimpl Number.Conversion, for: BitString do
       :error     -> raise ArgumentError, "could not convert #{inspect value} to float"
     end
   end
+
+  def to_decimal(value) do
+    string = String.Chars.to_string(value)
+    Decimal.new(string)
+  end
 end
 
 defimpl Number.Conversion, for: Float do
   def to_float(value), do: value
+
+  def to_decimal(value) do
+    Decimal.new(value)
+  end
 end
 
 defimpl Number.Conversion, for: Integer do
   def to_float(value), do: value * 1.0
+
+  def to_decimal(value) do
+    Decimal.new(value)
+  end
 end
 
 if Code.ensure_loaded?(Decimal) do
@@ -30,6 +46,10 @@ if Code.ensure_loaded?(Decimal) do
         |> Decimal.to_string
         |> Float.parse
       float
+    end
+
+    def to_decimal(value) do
+      value
     end
   end
 end
