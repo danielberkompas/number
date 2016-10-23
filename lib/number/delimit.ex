@@ -26,7 +26,7 @@ defmodule Number.Delimit do
   Default configuration for these options can be specified in the `Number`
   application configuration.
 
-      config :number, delimiter: [
+      config :number, delimit: [
                         precision: 3,
                         delimiter: ",",
                         separator: "."
