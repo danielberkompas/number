@@ -76,10 +76,11 @@ defmodule Number.Human do
   def number_to_ordinal(number) when is_integer(number) do
     sfx = ~w(th st nd rd th th th th th th)
 
-    if (rem(number, 100) >= 11) && (rem(number, 100) <= 13) do
-      "#{number}th"
-    else
-      "#{number}#{sfx |> Enum.at(rem(number, 10))}"
+    (number |> Integer.to_string()) <> case number |> rem(100) do
+      11 -> "th"
+      12 -> "th"
+      13 -> "th"
+      _ -> sfx |> Enum.at(number |> rem(10))
     end
   end
 
