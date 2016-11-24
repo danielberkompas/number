@@ -70,6 +70,20 @@ defmodule Number.Human do
     end
   end
 
+  @doc """
+  Adds ordinal suffix (st, nd, rd or th) for the number
+  """
+  def number_to_ordinal(number) when is_integer(number) do
+    sfx = ~w(th st nd rd th th th th th th)
+
+    if (rem(number, 100) >= 11) && (rem(number, 100) <= 13) do
+      "#{number}th"
+    else
+      "#{number}#{sfx |> Enum.at(rem(number, 10))}"
+    end
+  end
+
+
   defp sigil_d(number, _modifiers) do
     number
     |> String.replace("_", "")
