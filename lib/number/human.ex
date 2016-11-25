@@ -72,15 +72,32 @@ defmodule Number.Human do
 
   @doc """
   Adds ordinal suffix (st, nd, rd or th) for the number
+  ## Examples
+
+      iex> Number.Human.number_to_ordinal(3)
+      "3rd"
+
+      iex> Number.Human.number_to_ordinal(1)
+      "1st"
+
+      iex> Number.Human.number_to_ordinal(46)
+      "46th"
+
+      iex> Number.Human.number_to_ordinal(442)
+      "442nd"
+
+      iex> Number.Human.number_to_ordinal(4001)
+      "4001st"
+
   """
   def number_to_ordinal(number) when is_integer(number) do
     sfx = ~w(th st nd rd th th th th th th)
 
-    (number |> Integer.to_string()) <> case number |> rem(100) do
+    (Integer.to_string(number)) <> case rem(number, 100) do
       11 -> "th"
       12 -> "th"
       13 -> "th"
-      _ -> sfx |> Enum.at(number |> rem(10))
+      _ -> Enum.at(sfx, rem(number, 10))
     end
   end
 
