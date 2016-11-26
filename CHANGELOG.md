@@ -1,5 +1,21 @@
 # Change Log
 
+## [Unreleased](https://github.com/danielberkompas/number/tree/HEAD)
+
+[Full Changelog](https://github.com/danielberkompas/number/compare/v0.4.2...HEAD)
+
+**Closed issues:**
+
+- Error in hex doc [\#16](https://github.com/danielberkompas/number/issues/16)
+
+**Merged pull requests:**
+
+- Stop signing with Keybase [\#22](https://github.com/danielberkompas/number/pull/22) ([danielberkompas](https://github.com/danielberkompas))
+- Number with ordinal suffix [\#21](https://github.com/danielberkompas/number/pull/21) ([alexfilatov](https://github.com/alexfilatov))
+- Fixed \#16 [\#20](https://github.com/danielberkompas/number/pull/20) ([unti1x](https://github.com/unti1x))
+- \[\#18\] Improve precision using Decimal [\#19](https://github.com/danielberkompas/number/pull/19) ([danielberkompas](https://github.com/danielberkompas))
+- Fix Number.Delimit.number\_to\_delimited cannot handle negative in string [\#17](https://github.com/danielberkompas/number/pull/17) ([raycheung](https://github.com/raycheung))
+
 ## [v0.4.2](https://github.com/danielberkompas/number/tree/v0.4.2) (2016-07-02)
 [Full Changelog](https://github.com/danielberkompas/number/compare/v0.4.1...v0.4.2)
 
