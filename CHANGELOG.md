@@ -1,8 +1,7 @@
 # Change Log
 
-## [Unreleased](https://github.com/danielberkompas/number/tree/HEAD)
-
-[Full Changelog](https://github.com/danielberkompas/number/compare/v0.4.2...HEAD)
+## [v0.5.0](https://github.com/danielberkompas/number/tree/v0.5.0) (2016-11-26)
+[Full Changelog](https://github.com/danielberkompas/number/compare/v0.4.2...v0.5.0)
 
 **Closed issues:**
 
