@@ -63,22 +63,5 @@ end
 See the [Hex documentation](http://hexdocs.pm/number/) for more information
 about the modules provided by `Number`.
 
-## Signature
-
-`Number` is signed with [Keybase](https://keybase.io) to ensure authenticity.
-If you have keybase installed, you can validate the signature from the root
-directory using:
-
-```
-keybase dir verify
-```
-
-If you have installed `Number` as a hex package, simply `cd` to `deps/number`
-and run the above command in that directory.
-
-Since I don't sign every commit, only tagged versions will have a valid
-signature. The `HEAD` of the project will likely always have an invalid
-signature.
-
 ## License
 MIT. See [LICENSE](/LICENSE) for more details.
