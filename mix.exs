@@ -20,8 +20,8 @@ defmodule Number.Mixfile do
   defp deps do
     [
       {:decimal, "~> 1.0"},
-      {:ex_doc, "~> 0.11", only: :dev},
-      {:inch_ex, "~> 0.3", only: :docs}
+      {:ex_doc, ">= 0.0.0", only: :dev},
+      {:inch_ex, ">= 0.0.0", only: :docs}
     ]
   end
 
