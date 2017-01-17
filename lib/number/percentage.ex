@@ -58,7 +58,7 @@ defmodule Number.Percentage do
   @spec number_to_percentage(number, Keyword.t) :: String.t
   def number_to_percentage(number, options \\ [])
   def number_to_percentage(number, options) do
-    options = Dict.merge(config, options)
+    options = Keyword.merge(config(), options)
     number = number_to_delimited(number, options)
     number <> "%"
   end
@@ -70,6 +70,6 @@ defmodule Number.Percentage do
       precision: 3
     ]
 
-    Dict.merge(defaults, Application.get_env(:number, :percentage, []))
+    Keyword.merge(defaults, Application.get_env(:number, :percentage, []))
   end
 end
