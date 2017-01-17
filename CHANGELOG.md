@@ -1,5 +1,17 @@
 # Change Log
 
+## [Unreleased](https://github.com/danielberkompas/number/tree/HEAD)
+
+[Full Changelog](https://github.com/danielberkompas/number/compare/v0.5.0...HEAD)
+
+**Closed issues:**
+
+- Add to application list in mix.exs? [\#23](https://github.com/danielberkompas/number/issues/23)
+
+**Merged pull requests:**
+
+- Fix 1.4 warnings [\#24](https://github.com/danielberkompas/number/pull/24) ([stuartbain](https://github.com/stuartbain))
+
 ## [v0.5.0](https://github.com/danielberkompas/number/tree/v0.5.0) (2016-11-26)
 [Full Changelog](https://github.com/danielberkompas/number/compare/v0.4.2...v0.5.0)
 
