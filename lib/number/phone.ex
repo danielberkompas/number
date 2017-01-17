@@ -6,14 +6,14 @@ defmodule Number.Phone do
   import Number.Macros, only: [is_blank: 1]
 
   @doc """
-  Formats a number into a US phone number (e.g., (555) 123-9876). You can 
+  Formats a number into a US phone number (e.g., (555) 123-9876). You can
   customize the format in the options list.
 
   ## Parameters
 
   * `number` - A float or integer to convert.
-  
-  * `options` - A keyword list of options. See the documentation of all 
+
+  * `options` - A keyword list of options. See the documentation of all
     available options below for more information.
 
   ## Options
@@ -51,7 +51,7 @@ defmodule Number.Phone do
 
       iex> Number.Phone.number_to_phone(1235551234, area_code: true)
       "(123) 555-1234"
-      
+
       iex> Number.Phone.number_to_phone(1235551234, delimiter: " ")
       "123 555 1234"
 
@@ -74,7 +74,7 @@ defmodule Number.Phone do
   def number_to_phone(number, options \\ [])
   def number_to_phone(nil, _options), do: nil
   def number_to_phone(number, options) do
-    options = Dict.merge(config, options)
+    options = Keyword.merge(config(), options)
 
     number
     |> to_string
@@ -113,6 +113,6 @@ defmodule Number.Phone do
       country_code: nil
     ]
 
-    Dict.merge(defaults, Application.get_env(:number, :phone, []))
+    Keyword.merge(defaults, Application.get_env(:number, :phone, []))
   end
 end

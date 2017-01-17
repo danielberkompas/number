@@ -78,7 +78,7 @@ defmodule Number.SI do
   @spec number_to_si(number, list) :: String.t
   def number_to_si(number, options \\ [])
   def number_to_si(number, options) when is_number(number) do
-    options = Dict.merge(config, options)
+    options = Keyword.merge(config(), options)
     exp = compute_exponent(number, options[:base])
     prefix = exponent_to_prefix(exp)
     scaled_number = number / :math.pow(options[:base], exp)
@@ -127,7 +127,7 @@ defmodule Number.SI do
       unit: "",
       precision: 2
     ]
-    Dict.merge(defaults, Application.get_env(:number, :si, []))
+    Keyword.merge(defaults, Application.get_env(:number, :si, []))
   end
 
 end

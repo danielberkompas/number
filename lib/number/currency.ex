@@ -90,7 +90,7 @@ defmodule Number.Currency do
   def number_to_currency(number, options \\ [])
   def number_to_currency(nil, _options), do: nil
   def number_to_currency(number, options) do
-    options = Dict.merge(config, options)
+    options = Keyword.merge(config(), options)
     {number, format} = get_format(number, options)
     number = number_to_delimited(number, options)
 
@@ -113,6 +113,6 @@ defmodule Number.Currency do
       format: "%u%n"
     ]
 
-    Dict.merge(defaults, Application.get_env(:number, :currency, []))
+    Keyword.merge(defaults, Application.get_env(:number, :currency, []))
   end
 end

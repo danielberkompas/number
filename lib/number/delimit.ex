@@ -81,7 +81,7 @@ defmodule Number.Delimit do
   def number_to_delimited(nil, _options), do: nil
   def number_to_delimited(number, options) do
     float     = number |> Number.Conversion.to_float
-    options   = Dict.merge(config, options)
+    options   = Keyword.merge(config(), options)
     prefix    = if float < 0, do: "-", else: ""
     delimited =
       case to_integer(number) do
@@ -171,6 +171,6 @@ defmodule Number.Delimit do
       precision: 2,
     ]
 
-    Dict.merge(defaults, Application.get_env(:number, :delimit, []))
+    Keyword.merge(defaults, Application.get_env(:number, :delimit, []))
   end
 end
