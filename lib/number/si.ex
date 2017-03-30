@@ -82,7 +82,7 @@ defmodule Number.SI do
     exp = compute_exponent(number, options[:base])
     prefix = exponent_to_prefix(exp)
     scaled_number = number / :math.pow(options[:base], exp)
-    display_number = Float.to_string(scaled_number, decimals: options[:precision])
+    display_number = :erlang.float_to_binary(scaled_number, [{:decimals, options[:precision]}])
     final_number = if options[:trim], do: trim(display_number), else: display_number
     final_number <> options[:separator] <> prefix <> options[:unit]
   end

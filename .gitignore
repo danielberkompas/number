@@ -3,3 +3,7 @@
 erl_crash.dump
 *.ez
 /doc
+
+# Intellij project files
+.idea
+*.iml
