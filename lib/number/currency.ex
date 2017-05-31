@@ -85,6 +85,9 @@ defmodule Number.Currency do
 
       iex> Number.Currency.number_to_currency(Decimal.new(50.0))
       "$50.00"
+
+      iex> Number.Currency.number_to_currency(Decimal.new(-100.01))
+      "-$100.01"
   """
   @spec number_to_currency(number, list) :: String.t
   def number_to_currency(number, options \\ [])
@@ -99,10 +102,17 @@ defmodule Number.Currency do
     |> String.replace(~r/%n/, number)
   end
 
-  defp get_format(number, options) when number < 0 do
-    {abs(number), options[:negative_format] || "-#{options[:format]}"}
+  defp get_format(number, options) do
+    use DecimalArithmetic
+
+    number = Decimal.new(number)
+
+    if number < 0 do
+      {Decimal.abs(number), options[:negative_format] || "-#{options[:format]}"}
+    else
+      {number, options[:format]}
+    end
   end
-  defp get_format(number, options), do: {number, options[:format]}
 
   defp config do
     defaults = [
