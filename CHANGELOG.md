@@ -1,5 +1,19 @@
 # Change Log
 
+## [Unreleased](https://github.com/danielberkompas/number/tree/HEAD)
+
+[Full Changelog](https://github.com/danielberkompas/number/compare/v0.5.1...HEAD)
+
+**Closed issues:**
+
+- Number formatting with abbreviations: $1,200,000 -\> $1.2MM, $5,586 -\> $5.6k, etc. [\#26](https://github.com/danielberkompas/number/issues/26)
+
+**Merged pull requests:**
+
+- \[\#23\] Properly handle negative Decimals [\#29](https://github.com/danielberkompas/number/pull/29) ([danielberkompas](https://github.com/danielberkompas))
+- fix Float.to\_string warnings for elixir 1.3 [\#27](https://github.com/danielberkompas/number/pull/27) ([kerryjj](https://github.com/kerryjj))
+- Update readme for Elixir 1.4 instructions. [\#25](https://github.com/danielberkompas/number/pull/25) ([sergiotapia](https://github.com/sergiotapia))
+
 ## [v0.5.1](https://github.com/danielberkompas/number/tree/v0.5.1) (2017-01-17)
 [Full Changelog](https://github.com/danielberkompas/number/compare/v0.5.0...v0.5.1)
 
