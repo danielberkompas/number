@@ -2,7 +2,19 @@
 
 ## [Unreleased](https://github.com/danielberkompas/number/tree/HEAD)
 
-[Full Changelog](https://github.com/danielberkompas/number/compare/v0.5.1...HEAD)
+[Full Changelog](https://github.com/danielberkompas/number/compare/v0.5.2...HEAD)
+
+**Closed issues:**
+
+- Deprecation warnings in Elixir 1.5 [\#30](https://github.com/danielberkompas/number/issues/30)
+- Negative Decimal problem [\#28](https://github.com/danielberkompas/number/issues/28)
+
+**Merged pull requests:**
+
+- \[\#30\] Fix deprecation warnings on Elixir 1.5 [\#31](https://github.com/danielberkompas/number/pull/31) ([danielberkompas](https://github.com/danielberkompas))
+
+## [v0.5.2](https://github.com/danielberkompas/number/tree/v0.5.2) (2017-08-05)
+[Full Changelog](https://github.com/danielberkompas/number/compare/v0.5.1...v0.5.2)
 
 **Closed issues:**
 
