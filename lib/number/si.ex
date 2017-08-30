@@ -114,7 +114,9 @@ defmodule Number.SI do
 
   defp trim(display_number) do
     if String.contains?(display_number, ".") do
-      display_number |> String.rstrip(?0) |> String.rstrip(?.)
+      display_number
+      |> String.trim_trailing("0")
+      |> String.trim_trailing(".")
     else
       display_number
     end

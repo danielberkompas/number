@@ -130,7 +130,7 @@ defmodule Number.Delimit do
 
   defp delimit_integer(number, delimiter) do
     abs(number)
-    |> Integer.to_char_list
+    |> Integer.to_charlist
     |> :lists.reverse
     |> delimit_integer(delimiter, [])
   end
