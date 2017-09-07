@@ -1,5 +1,17 @@
 # Change Log
 
+## [Unreleased](https://github.com/danielberkompas/number/tree/HEAD)
+
+[Full Changelog](https://github.com/danielberkompas/number/compare/v0.5.3...HEAD)
+
+**Closed issues:**
+
+- decimal\_arithmetic is missing from applications list [\#32](https://github.com/danielberkompas/number/issues/32)
+
+**Merged pull requests:**
+
+- \[\#32\] Switch to `extra\_applications` [\#33](https://github.com/danielberkompas/number/pull/33) ([danielberkompas](https://github.com/danielberkompas))
+
 ## [v0.5.3](https://github.com/danielberkompas/number/tree/v0.5.3) (2017-08-30)
 [Full Changelog](https://github.com/danielberkompas/number/compare/v0.5.2...v0.5.3)
 
