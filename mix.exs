@@ -5,7 +5,7 @@ defmodule Number.Mixfile do
     [
       app: :number,
       description: "Convert numbers to various string formats, such as currency",
-      version: "0.5.4",
+      version: "0.5.5",
       elixir: "~> 1.0",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
