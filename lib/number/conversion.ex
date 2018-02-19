@@ -1,5 +1,6 @@
 defprotocol Number.Conversion do
   @moduledoc "Converts values to formats consumable by Number."
+  @fallback_to_any false
 
   @doc "Converts a value to a Float."
   def to_float(value)
@@ -12,7 +13,7 @@ defimpl Number.Conversion, for: BitString do
   def to_float(value) do
     case Float.parse(value) do
       {float, _} -> float
-      :error     -> raise ArgumentError, "could not convert #{inspect value} to float"
+      :error -> raise ArgumentError, "could not convert #{inspect(value)} to float"
     end
   end
 
@@ -43,8 +44,9 @@ if Code.ensure_loaded?(Decimal) do
     def to_float(value) do
       {float, _} =
         value
-        |> Decimal.to_string
-        |> Float.parse
+        |> Decimal.to_string()
+        |> Float.parse()
+
       float
     end
 

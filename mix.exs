@@ -2,15 +2,18 @@ defmodule Number.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :number,
-     description: "Convert numbers to various string formats, such as currency",
-     version: "0.5.4",
-     elixir: "~> 1.0",
-     build_embedded: Mix.env == :prod,
-     start_permanent: Mix.env == :prod,
-     package: package(),
-     deps: deps(),
-     docs: docs()]
+    [
+      app: :number,
+      description: "Convert numbers to various string formats, such as currency",
+      version: "0.5.4",
+      elixir: "~> 1.0",
+      build_embedded: Mix.env() == :prod,
+      start_permanent: Mix.env() == :prod,
+      package: package(),
+      deps: deps(),
+      docs: docs(),
+      dialyzer: [ignore_warnings: "dialyzer.ignore-warnings"]
+    ]
   end
 
   def application do
@@ -22,7 +25,8 @@ defmodule Number.Mixfile do
       {:decimal, "~> 1.0"},
       {:decimal_arithmetic, "~> 0.1"},
       {:ex_doc, ">= 0.0.0", only: :dev},
-      {:inch_ex, ">= 0.0.0", only: :docs}
+      {:inch_ex, ">= 0.0.0", only: :docs},
+      {:dialyxir, "~> 0.5", only: :dev, runtime: false}
     ]
   end
 
