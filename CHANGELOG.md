@@ -1,5 +1,17 @@
 # Change Log
 
+## [Unreleased](https://github.com/danielberkompas/number/tree/HEAD)
+
+[Full Changelog](https://github.com/danielberkompas/number/compare/v0.5.4...HEAD)
+
+**Closed issues:**
+
+- Invalid typespecs [\#34](https://github.com/danielberkompas/number/issues/34)
+
+**Merged pull requests:**
+
+- Use Number.t to fix type specs [\#35](https://github.com/danielberkompas/number/pull/35) ([jclem](https://github.com/jclem))
+
 ## [v0.5.4](https://github.com/danielberkompas/number/tree/v0.5.4) (2017-09-07)
 [Full Changelog](https://github.com/danielberkompas/number/compare/v0.5.3...v0.5.4)
 
