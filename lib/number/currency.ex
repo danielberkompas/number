@@ -100,9 +100,7 @@ defmodule Number.Currency do
     {number, format} = get_format(number, options)
     number = number_to_delimited(number, options)
 
-    format
-    |> String.replace(~r/%u/, options[:unit])
-    |> String.replace(~r/%n/, number)
+    format |> String.replace(~r/%u/, options[:unit]) |> String.replace(~r/%n/, number)
   end
 
   defp get_format(number, options) do
