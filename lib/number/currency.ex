@@ -88,6 +88,9 @@ defmodule Number.Currency do
 
       iex> Number.Currency.number_to_currency(Decimal.new(-100.01))
       "-$100.01"
+
+      iex> Number.Currency.number_to_currency(Decimal.new(-100.01), unit: "$", separator: ",", delimiter: ".", negative_format: "- %u %n")
+      "- $ 100,01"
   """
   @spec number_to_currency(Number.t, list) :: String.t
   def number_to_currency(number, options \\ [])
@@ -97,9 +100,7 @@ defmodule Number.Currency do
     {number, format} = get_format(number, options)
     number = number_to_delimited(number, options)
 
-    format
-    |> String.replace(~r/%u/, options[:unit])
-    |> String.replace(~r/%n/, number)
+    format |> String.replace(~r/%u/, options[:unit]) |> String.replace(~r/%n/, number)
   end
 
   defp get_format(number, options) do
@@ -107,10 +108,9 @@ defmodule Number.Currency do
 
     number = Decimal.new(number)
 
-    if number < 0 do
-      {Decimal.abs(number), options[:negative_format] || "-#{options[:format]}"}
-    else
-      {number, options[:format]}
+    case Decimal.cmp(number, Decimal.new(0)) do
+      :lt -> {Decimal.abs(number), options[:negative_format] || "-#{options[:format]}"}
+      _ ->{number, options[:format]}
     end
   end
 
