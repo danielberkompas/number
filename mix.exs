@@ -11,8 +11,7 @@ defmodule Number.Mixfile do
       start_permanent: Mix.env() == :prod,
       package: package(),
       deps: deps(),
-      docs: docs(),
-      dialyzer: [ignore_warnings: "dialyzer.ignore-warnings"]
+      docs: docs()
     ]
   end
 
@@ -25,8 +24,7 @@ defmodule Number.Mixfile do
       {:decimal, "~> 1.0"},
       {:decimal_arithmetic, "~> 0.1"},
       {:ex_doc, ">= 0.0.0", only: :dev},
-      {:inch_ex, ">= 0.0.0", only: :docs},
-      {:dialyxir, "~> 0.5", only: :dev, runtime: false}
+      {:inch_ex, ">= 0.0.0", only: :docs}
     ]
   end
 
