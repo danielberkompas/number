@@ -1,8 +1,13 @@
-[![Deps Status](https://beta.hexfaktor.org/badge/all/github/danielberkompas/number.svg)](https://beta.hexfaktor.org/github/danielberkompas/number)
+# Number
 
-`Number` is a pretentiously-named [Elixir](https://github.com/elixir-lang/elixir)
-library which provides functions to convert numbers into a variety of different
-formats. Ultimately, it aims to be a partial or complete clone of [ActionView::Helpers::NumberHelper](http://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html)
+[![Build Status](https://travis-ci.org/danielberkompas/number.svg?branch=master)](https://travis-ci.org/danielberkompas/number)
+[![Inline docs](http://inch-ci.org/github/danielberkompas/number.svg?branch=master)](http://inch-ci.org/github/danielberkompas/number)
+
+`Number` is a pretentiously-named
+[Elixir](https://github.com/elixir-lang/elixir) library which provides
+functions to convert numbers into a variety of different formats. Ultimately,
+it aims to be a partial or complete clone of
+[ActionView::Helpers::NumberHelper](http://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html)
 from Rails.
 
 ```elixir
@@ -36,7 +41,8 @@ Then run `mix deps.get`.
 
 ### Extra step for Elixir 1.3 and lower
 
-If you're running Elixir 1.3 or lower, don't forget to add it under your applications list in `mix.exs`:
+If you're running Elixir 1.3 or lower, don't forget to add it under your
+applications list in `mix.exs`:
 
 ```elixir
 def application do
