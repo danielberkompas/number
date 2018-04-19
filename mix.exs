@@ -9,6 +9,14 @@ defmodule Number.Mixfile do
       elixir: "~> 1.0",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
+      test_coverage: [tool: ExCoveralls],
+      preferred_cli_env: [
+        coveralls: :test,
+        "coveralls.detail": :test,
+        "coveralls.post": :test,
+        "coveralls.html": :test,
+        "coveralls.travis": :test
+      ],
       package: package(),
       deps: deps(),
       docs: docs()
@@ -23,8 +31,9 @@ defmodule Number.Mixfile do
     [
       {:decimal, "~> 1.0"},
       {:decimal_arithmetic, "~> 0.1"},
-      {:ex_doc, ">= 0.0.0", only: :dev},
-      {:inch_ex, ">= 0.0.0", only: :docs}
+      {:excoveralls, ">= 0.0.0", only: :test},
+      {:ex_doc, ">= 0.0.0", only: [:dev, :test]},
+      {:inch_ex, ">= 0.0.0", only: [:dev, :test]}
     ]
   end
 

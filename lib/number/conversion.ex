@@ -39,19 +39,17 @@ defimpl Number.Conversion, for: Integer do
   end
 end
 
-if Code.ensure_loaded?(Decimal) do
-  defimpl Number.Conversion, for: Decimal do
-    def to_float(value) do
-      {float, _} =
-        value
-        |> Decimal.to_string()
-        |> Float.parse()
-
-      float
-    end
-
-    def to_decimal(value) do
+defimpl Number.Conversion, for: Decimal do
+  def to_float(value) do
+    {float, _} =
       value
-    end
+      |> Decimal.to_string()
+      |> Float.parse()
+
+    float
+  end
+
+  def to_decimal(value) do
+    value
   end
 end

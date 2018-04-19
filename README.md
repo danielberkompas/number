@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/danielberkompas/number.svg?branch=master)](https://travis-ci.org/danielberkompas/number)
 [![Inline docs](http://inch-ci.org/github/danielberkompas/number.svg?branch=master)](http://inch-ci.org/github/danielberkompas/number)
+[![Coverage Status](https://coveralls.io/repos/github/danielberkompas/number/badge.svg)](https://coveralls.io/github/danielberkompas/number)
 
 `Number` is a pretentiously-named
 [Elixir](https://github.com/elixir-lang/elixir) library which provides

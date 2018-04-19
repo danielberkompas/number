@@ -5,4 +5,9 @@
 mix format --check-formatted || { echo 'Please format files using mix format'; exit 1; }
 mix compile --force --warnings-as-errors || { echo 'Please fix all compiler warnings'; exit 1; }
 mix docs || { echo 'Docs did not generate!'; exit 1; }
-mix test || { echo 'Tests failed!'; exit 1; }
+
+if [ $CI ]; then
+  mix coveralls.travis || { echo 'Elixir tests failed!'; exit 1; }
+else
+  mix test || { echo 'Elixir tests failed!'; exit 1; }
+fi

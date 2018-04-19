@@ -37,6 +37,10 @@ defmodule Number.Human do
 
       iex> Number.Human.number_to_human(Decimal.new("5000.0"))
       "5.00 Thousand"
+
+      iex> Number.Human.number_to_human('charlist')
+      ** (ArgumentError) number must be a float, integer or implement `Number.Conversion` protocol, was 'charlist'
+
   """
   def number_to_human(number, options \\ [])
 
@@ -46,10 +50,10 @@ defmodule Number.Human do
       |> Number.Conversion.to_decimal()
       |> number_to_human(options)
     else
-      raise ArgumentError, """
-      number must be a float or integer, or implement `Number.Conversion` protocol,
-      was #{inspect(number)}"
-      """
+      raise ArgumentError,
+            "number must be a float, integer or implement `Number.Conversion` protocol, was #{
+              inspect(number)
+            }"
     end
   end
 

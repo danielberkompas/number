@@ -6,5 +6,5 @@ otp_release:
 script:
   - bin/test
 after_script:
-- MIX_ENV=docs mix deps.get
-- MIX_ENV=docs mix inch.report
+- MIX_ENV=dev mix deps.get
+- MIX_ENV=dev mix inch.report

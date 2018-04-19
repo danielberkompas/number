@@ -90,6 +90,9 @@ defmodule Number.SI do
 
       iex> Number.SI.number_to_si(Decimal.new(1210000000))
       "1.21G"
+
+      iex> Number.SI.number_to_si('charlist')
+      ** (ArgumentError) number must be a float, integer or implement `Number.Conversion` protocol, was 'charlist'
   """
   @spec number_to_si(number, list) :: String.t()
   def number_to_si(number, options \\ [])
@@ -110,10 +113,10 @@ defmodule Number.SI do
       |> Number.Conversion.to_float()
       |> number_to_si(options)
     else
-      raise ArgumentError, """
-      number must be a float or integer, or implement `Number.Conversion` protocol,
-      was #{inspect(number)}"
-      """
+      raise ArgumentError,
+            "number must be a float, integer or implement `Number.Conversion` protocol, was #{
+              inspect(number)
+            }"
     end
   end
 
