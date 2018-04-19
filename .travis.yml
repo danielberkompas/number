@@ -4,7 +4,7 @@ elixir:
 otp_release:
   - 20.1
 script:
-  - mix test
+  - bin/test
 after_script:
 - MIX_ENV=docs mix deps.get
 - MIX_ENV=docs mix inch.report
