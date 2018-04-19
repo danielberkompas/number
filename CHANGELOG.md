@@ -2,7 +2,14 @@
 
 ## [Unreleased](https://github.com/danielberkompas/number/tree/HEAD)
 
-[Full Changelog](https://github.com/danielberkompas/number/compare/v0.5.4...HEAD)
+[Full Changelog](https://github.com/danielberkompas/number/compare/v0.5.5...HEAD)
+
+**Merged pull requests:**
+
+- Decimal to currency fix [\#36](https://github.com/danielberkompas/number/pull/36) ([Eptis](https://github.com/Eptis))
+
+## [v0.5.5](https://github.com/danielberkompas/number/tree/v0.5.5) (2018-02-19)
+[Full Changelog](https://github.com/danielberkompas/number/compare/v0.5.4...v0.5.5)
 
 **Closed issues:**
 
