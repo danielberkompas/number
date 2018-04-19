@@ -113,7 +113,7 @@ defmodule Number.Currency do
 
     case Decimal.cmp(number, Decimal.new(0)) do
       :lt -> {Decimal.abs(number), options[:negative_format] || "-#{options[:format]}"}
-      _ ->{number, options[:format]}
+      _ -> {number, options[:format]}
     end
   end
 
