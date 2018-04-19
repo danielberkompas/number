@@ -130,6 +130,7 @@ defmodule Number.SI do
     |> min(8)
   end
 
+  @doc false
   for {num, text} = _p <- @prefixes do
     def exponent_to_prefix(number) when number == unquote(num), do: unquote(text)
   end

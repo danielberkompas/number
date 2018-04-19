@@ -149,6 +149,7 @@ defmodule Number.Delimit do
     :lists.reverse(list) ++ acc
   end
 
+  @doc false
   def delimit_decimal(decimal, delimiter, separator, precision) do
     string =
       decimal

@@ -10,6 +10,8 @@ defprotocol Number.Conversion do
 end
 
 defimpl Number.Conversion, for: BitString do
+  @moduledoc false
+
   def to_float(value) do
     case Float.parse(value) do
       {float, _} -> float
@@ -24,6 +26,8 @@ defimpl Number.Conversion, for: BitString do
 end
 
 defimpl Number.Conversion, for: Float do
+  @moduledoc false
+
   def to_float(value), do: value
 
   def to_decimal(value) do
@@ -32,6 +36,8 @@ defimpl Number.Conversion, for: Float do
 end
 
 defimpl Number.Conversion, for: Integer do
+  @moduledoc false
+
   def to_float(value), do: value * 1.0
 
   def to_decimal(value) do
@@ -40,6 +46,8 @@ defimpl Number.Conversion, for: Integer do
 end
 
 defimpl Number.Conversion, for: Decimal do
+  @moduledoc false
+
   def to_float(value) do
     {float, _} =
       value
