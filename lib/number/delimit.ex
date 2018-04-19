@@ -76,13 +76,15 @@ defmodule Number.Delimit do
       iex> Number.Delimit.number_to_delimited Decimal.new("123456789555555555555555555555555")
       "123,456,789,555,555,555,555,555,555,555,555.00"
   """
-  @spec number_to_delimited(Number.t, list) :: String.t
+  @spec number_to_delimited(Number.t(), list) :: String.t()
   def number_to_delimited(number, options \\ [])
   def number_to_delimited(nil, _options), do: nil
+
   def number_to_delimited(number, options) do
-    float     = number |> Number.Conversion.to_float
-    options   = Keyword.merge(config(), options)
-    prefix    = if float < 0, do: "-", else: ""
+    float = number |> Number.Conversion.to_float()
+    options = Keyword.merge(config(), options)
+    prefix = if float < 0, do: "-", else: ""
+
     delimited =
       case to_integer(number) do
         {:ok, number} ->
@@ -94,10 +96,11 @@ defmodule Number.Delimit do
           else
             number
           end
+
         {:error, other} ->
           other
           |> to_string
-          |> Number.Conversion.to_decimal
+          |> Number.Conversion.to_decimal()
           |> delimit_decimal(options[:delimiter], options[:separator], options[:precision])
       end
 
@@ -108,6 +111,7 @@ defmodule Number.Delimit do
   defp to_integer(integer) when is_integer(integer) do
     {:ok, integer}
   end
+
   defp to_integer(%{__struct__: Decimal} = decimal) do
     try do
       {:ok, Decimal.to_integer(decimal)}
@@ -116,6 +120,7 @@ defmodule Number.Delimit do
         {:error, decimal}
     end
   end
+
   defp to_integer(string) when is_binary(string) do
     try do
       {:ok, String.to_integer(string)}
@@ -124,19 +129,22 @@ defmodule Number.Delimit do
         {:error, string}
     end
   end
+
   defp to_integer(other) do
     {:error, other}
   end
 
   defp delimit_integer(number, delimiter) do
     abs(number)
-    |> Integer.to_charlist
-    |> :lists.reverse
+    |> Integer.to_charlist()
+    |> :lists.reverse()
     |> delimit_integer(delimiter, [])
   end
-  defp delimit_integer([a,b,c,d|tail], delimiter, acc) do
-    delimit_integer([d|tail], delimiter, [delimiter,c,b,a|acc])
+
+  defp delimit_integer([a, b, c, d | tail], delimiter, acc) do
+    delimit_integer([d | tail], delimiter, [delimiter, c, b, a | acc])
   end
+
   defp delimit_integer(list, _, acc) do
     :lists.reverse(list) ++ acc
   end
@@ -157,7 +165,7 @@ defmodule Number.Delimit do
 
     integer =
       number
-      |> String.to_integer
+      |> String.to_integer()
       |> delimit_integer(delimiter)
 
     separator = if precision == 0, do: "", else: separator
@@ -168,7 +176,7 @@ defmodule Number.Delimit do
     defaults = [
       delimiter: ",",
       separator: ".",
-      precision: 2,
+      precision: 2
     ]
 
     Keyword.merge(defaults, Application.get_env(:number, :delimit, []))

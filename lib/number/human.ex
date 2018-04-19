@@ -43,12 +43,12 @@ defmodule Number.Human do
   def number_to_human(number, options) when not is_map(number) do
     if Number.Conversion.impl_for(number) do
       number
-      |> Number.Conversion.to_decimal
+      |> Number.Conversion.to_decimal()
       |> number_to_human(options)
     else
       raise ArgumentError, """
       number must be a float or integer, or implement `Number.Conversion` protocol,
-      was #{inspect number}"
+      was #{inspect(number)}"
       """
     end
   end
@@ -57,14 +57,20 @@ defmodule Number.Human do
     cond do
       cmp(number, ~d(999)) == :gt && cmp(number, ~d(1_000_000)) == :lt ->
         delimit(number, ~d(1_000), "Thousand", options)
+
       cmp(number, ~d(1_000_000)) in [:gt, :eq] and cmp(number, ~d(1_000_000_000)) == :lt ->
         delimit(number, ~d(1_000_000), "Million", options)
+
       cmp(number, ~d(1_000_000_000)) in [:gt, :eq] and cmp(number, ~d(1_000_000_000_000)) == :lt ->
         delimit(number, ~d(1_000_000_000), "Billion", options)
-      cmp(number, ~d(1_000_000_000_000)) in [:gt, :eq] and cmp(number, ~d(1_000_000_000_000_000)) == :lt ->
+
+      cmp(number, ~d(1_000_000_000_000)) in [:gt, :eq] and
+          cmp(number, ~d(1_000_000_000_000_000)) == :lt ->
         delimit(number, ~d(1_000_000_000_000), "Trillion", options)
+
       cmp(number, ~d(1_000_000_000_000_000)) in [:gt, :eq] ->
         delimit(number, ~d(1_000_000_000_000_000), "Quadrillion", options)
+
       true ->
         number_to_delimited(number, options)
     end
@@ -93,20 +99,20 @@ defmodule Number.Human do
   def number_to_ordinal(number) when is_integer(number) do
     sfx = ~w(th st nd rd th th th th th th)
 
-    (Integer.to_string(number)) <> case rem(number, 100) do
-      11 -> "th"
-      12 -> "th"
-      13 -> "th"
-      _ -> Enum.at(sfx, rem(number, 10))
-    end
+    Integer.to_string(number) <>
+      case rem(number, 100) do
+        11 -> "th"
+        12 -> "th"
+        13 -> "th"
+        _ -> Enum.at(sfx, rem(number, 10))
+      end
   end
-
 
   defp sigil_d(number, _modifiers) do
     number
     |> String.replace("_", "")
-    |> String.to_integer
-    |> Decimal.new
+    |> String.to_integer()
+    |> Decimal.new()
   end
 
   defp delimit(number, divisor, label, options) do

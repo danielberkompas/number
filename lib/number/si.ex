@@ -4,23 +4,39 @@ defmodule Number.SI do
   """
 
   @prefixes [
-    {8,  "Y"},   # yotta
-    {7,  "Z"},   # zetta
-    {6,  "E"},   # exa
-    {5,  "P"},   # peta
-    {4,  "T"},   # tera
-    {3,  "G"},   # giga
-    {2,  "M"},   # mega
-    {1,  "k"},   # kilo
-    {0,  ""},
-    {-1, "m"},   # milli
-    {-2, "µ"},   # micro
-    {-3, "n"},   # nano
-    {-4, "p"},   # pico
-    {-5, "f"},   # femto
-    {-6, "a"},   # atto
-    {-7, "z"},   # zepto
-    {-8, "y"}    # ycoto
+    # yotta
+    {8, "Y"},
+    # zetta
+    {7, "Z"},
+    # exa
+    {6, "E"},
+    # peta
+    {5, "P"},
+    # tera
+    {4, "T"},
+    # giga
+    {3, "G"},
+    # mega
+    {2, "M"},
+    # kilo
+    {1, "k"},
+    {0, ""},
+    # milli
+    {-1, "m"},
+    # micro
+    {-2, "µ"},
+    # nano
+    {-3, "n"},
+    # pico
+    {-4, "p"},
+    # femto
+    {-5, "f"},
+    # atto
+    {-6, "a"},
+    # zepto
+    {-7, "z"},
+    # ycoto
+    {-8, "y"}
   ]
 
   @doc """
@@ -75,8 +91,9 @@ defmodule Number.SI do
       iex> Number.SI.number_to_si(Decimal.new(1210000000))
       "1.21G"
   """
-  @spec number_to_si(number, list) :: String.t
+  @spec number_to_si(number, list) :: String.t()
   def number_to_si(number, options \\ [])
+
   def number_to_si(number, options) when is_number(number) do
     options = Keyword.merge(config(), options)
     exp = compute_exponent(number, options[:base])
@@ -86,26 +103,28 @@ defmodule Number.SI do
     final_number = if options[:trim], do: trim(display_number), else: display_number
     final_number <> options[:separator] <> prefix <> options[:unit]
   end
+
   def number_to_si(number, options) do
     if Number.Conversion.impl_for(number) do
       number
-      |> Number.Conversion.to_float
+      |> Number.Conversion.to_float()
       |> number_to_si(options)
     else
       raise ArgumentError, """
       number must be a float or integer, or implement `Number.Conversion` protocol,
-      was #{inspect number}"
+      was #{inspect(number)}"
       """
     end
   end
 
   defp compute_exponent(number, _) when number == 0, do: 0
+
   defp compute_exponent(number, base) do
-    :math.log(abs(number)) / :math.log(base)
-      |> Float.floor
-      |> trunc
-      |> max(-8)
-      |> min(8)
+    (:math.log(abs(number)) / :math.log(base))
+    |> Float.floor()
+    |> trunc
+    |> max(-8)
+    |> min(8)
   end
 
   for {num, text} = _p <- @prefixes do
@@ -129,7 +148,7 @@ defmodule Number.SI do
       unit: "",
       precision: 2
     ]
+
     Keyword.merge(defaults, Application.get_env(:number, :si, []))
   end
-
 end

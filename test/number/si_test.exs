@@ -5,7 +5,6 @@ defmodule Number.SITest do
   doctest Number.SI
 
   test "SI.number_to_si" do
-
     assert SI.number_to_si(1337.0e-16) == "133.70f"
     assert SI.number_to_si(1337.0e-15) == "1.34p"
     assert SI.number_to_si(1337.0e-14) == "13.37p"
@@ -70,6 +69,5 @@ defmodule Number.SITest do
     assert SI.number_to_si(0.0, precision: 2, trim: true) == "0"
     assert SI.number_to_si(0.0, precision: 0, trim: true) == "0"
     assert SI.number_to_si(1337.0e30, precision: 0, trim: true) == "1337000000Y"
-
   end
 end

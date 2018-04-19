@@ -70,9 +70,10 @@ defmodule Number.Phone do
       iex> Number.Phone.number_to_phone(1235551234, country_code: 1, extension: 1343, delimiter: ".")
       "+1.123.555.1234 x 1343"
   """
-  @spec number_to_phone(number, list) :: String.t
+  @spec number_to_phone(number, list) :: String.t()
   def number_to_phone(number, options \\ [])
   def number_to_phone(nil, _options), do: nil
+
   def number_to_phone(number, options) do
     options = Keyword.merge(config(), options)
 
@@ -84,23 +85,27 @@ defmodule Number.Phone do
   end
 
   defp delimit_number(number, delimiter, area_code) when area_code == false do
-    {:ok, leading_delimiter} = "^#{Regex.escape(delimiter)}" |> Regex.compile
+    {:ok, leading_delimiter} = "^#{Regex.escape(delimiter)}" |> Regex.compile()
 
     number
     |> String.replace(~r/(\d{0,3})(\d{3})(\d{4})$/, "\\1#{delimiter}\\2#{delimiter}\\3")
     |> String.replace(leading_delimiter, "")
   end
+
   defp delimit_number(number, delimiter, area_code) when area_code == true do
     String.replace(number, ~r/(\d{1,3})(\d{3})(\d{4}$)/, "(\\1) \\2#{delimiter}\\3")
   end
 
   defp prepend_country_code(number, country_code, _, _) when is_blank(country_code), do: number
+
   defp prepend_country_code(number, country_code, delimiter, area_code) do
-    if area_code, do:   "+#{country_code} #{number}",
-                  else: "+#{country_code}#{delimiter}#{number}"
+    if area_code,
+      do: "+#{country_code} #{number}",
+      else: "+#{country_code}#{delimiter}#{number}"
   end
 
   defp append_extension(number, extension) when is_blank(extension), do: number
+
   defp append_extension(number, extension) do
     "#{number} x #{extension}"
   end

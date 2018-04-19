@@ -25,7 +25,7 @@ defmodule Number do
   contains documentation on how to configure it.
   """
 
-  @type t :: number | Decimal.t
+  @type t :: number | Decimal.t()
 
   @doc false
   defmacro __using__(_) do

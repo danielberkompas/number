@@ -89,9 +89,10 @@ defmodule Number.Currency do
       iex> Number.Currency.number_to_currency(Decimal.new(-100.01))
       "-$100.01"
   """
-  @spec number_to_currency(Number.t, list) :: String.t
+  @spec number_to_currency(Number.t(), list) :: String.t()
   def number_to_currency(number, options \\ [])
   def number_to_currency(nil, _options), do: nil
+
   def number_to_currency(number, options) do
     options = Keyword.merge(config(), options)
     {number, format} = get_format(number, options)

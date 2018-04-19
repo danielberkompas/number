@@ -1,7 +1,7 @@
 defmodule Number.ConversionTest do
   use ExUnit.Case
   import Number.Conversion
-  
+
   test ".to_float can convert a binary to a float" do
     assert 10.0 == to_float("10.00")
   end
