@@ -1,5 +1,13 @@
 # Change Log
 
+## [Unreleased](https://github.com/danielberkompas/number/tree/HEAD)
+
+[Full Changelog](https://github.com/danielberkompas/number/compare/v0.5.6...HEAD)
+
+**Merged pull requests:**
+
+- Drop DecimalArithmetic [\#37](https://github.com/danielberkompas/number/pull/37) ([michalmuskala](https://github.com/michalmuskala))
+
 ## [v0.5.6](https://github.com/danielberkompas/number/tree/v0.5.6) (2018-04-19)
 [Full Changelog](https://github.com/danielberkompas/number/compare/v0.5.5...v0.5.6)
 
