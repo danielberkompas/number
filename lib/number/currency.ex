@@ -107,8 +107,6 @@ defmodule Number.Currency do
   end
 
   defp get_format(number, options) do
-    use DecimalArithmetic
-
     number = Decimal.new(number)
 
     case Decimal.cmp(number, Decimal.new(0)) do
