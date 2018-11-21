@@ -2,7 +2,18 @@
 
 ## [Unreleased](https://github.com/danielberkompas/number/tree/HEAD)
 
-[Full Changelog](https://github.com/danielberkompas/number/compare/v0.5.6...HEAD)
+[Full Changelog](https://github.com/danielberkompas/number/compare/v0.5.7...HEAD)
+
+**Closed issues:**
+
+- Rounding fails [\#38](https://github.com/danielberkompas/number/issues/38)
+
+**Merged pull requests:**
+
+- Fix Number.SI test failure, upgrade Travis [\#39](https://github.com/danielberkompas/number/pull/39) ([danielberkompas](https://github.com/danielberkompas))
+
+## [v0.5.7](https://github.com/danielberkompas/number/tree/v0.5.7) (2018-05-17)
+[Full Changelog](https://github.com/danielberkompas/number/compare/v0.5.6...v0.5.7)
 
 **Merged pull requests:**
 
