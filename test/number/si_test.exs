@@ -53,7 +53,7 @@ defmodule Number.SITest do
     assert SI.number_to_si(0.0, precision: 0, unit: "M", separator: " ") == "0 M"
 
     # base for formatting bytes
-    assert SI.number_to_si(23.456e8, base: 1024, unit: "B") == "2.19GB"
+    assert SI.number_to_si(23.456e8, base: 1024, unit: "B") == "2.18GB"
 
     # handle really big and really small numbers
     assert SI.number_to_si(1337.0e30, precision: 0) == "1337000000Y"
