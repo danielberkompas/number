@@ -38,7 +38,6 @@ defmodule Number.Mixfile do
 
   defp docs do
     [
-      readme: "README.md",
       main: Number
     ]
   end
