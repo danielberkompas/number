@@ -52,7 +52,7 @@ defmodule Number.Percentage do
       iex> Number.Percentage.number_to_percentage(302.24398923423, precision: 5)
       "302.24399%"
 
-      iex> Number.Percentage.number_to_percentage(Decimal.new(59.236), precision: 2)
+      iex> Number.Percentage.number_to_percentage(Decimal.from_float(59.236), precision: 2)
       "59.24%"
   """
   @spec number_to_percentage(number, Keyword.t()) :: String.t()

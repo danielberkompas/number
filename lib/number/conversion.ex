@@ -31,7 +31,7 @@ defimpl Number.Conversion, for: Float do
   def to_float(value), do: value
 
   def to_decimal(value) do
-    Decimal.new(value)
+    Decimal.from_float(value)
   end
 end
 

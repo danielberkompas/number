@@ -30,11 +30,11 @@ defmodule Number.ConversionTest do
 
   describe ".to_decimal/2" do
     test "converts float to decimal" do
-      assert to_decimal(123.45) == Decimal.new(123.45)
+      assert to_decimal(123.45) == Decimal.from_float(123.45)
     end
 
     test "leaves decimal alone" do
-      assert to_decimal(Decimal.new(123.45)) == Decimal.new(123.45)
+      assert to_decimal(Decimal.from_float(123.45)) == Decimal.from_float(123.45)
     end
   end
 end
