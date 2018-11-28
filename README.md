@@ -34,24 +34,11 @@ Get it from Hex:
 
 ```elixir
 defp deps do
-  [{:number, "~> 0.5.7"}]
+  [{:number, "~> 1.0.0"}]
 end
 ```
 
 Then run `mix deps.get`. 
-
-### Extra step for Elixir 1.3 and lower
-
-If you're running Elixir 1.3 or lower, don't forget to add it under your
-applications list in `mix.exs`:
-
-```elixir
-def application do
-  [applications: [:number]]
-end
-```
-
-Elixir 1.4 and higher [doesn't need to add the package to the applications list](https://sergiotapia.me/application-inference-in-elixir-1-4-ae9e43e90301#.va80lbj94).
 
 ## Usage
 
