@@ -67,7 +67,7 @@ defmodule Number.Delimit do
       iex> Number.Delimit.number_to_delimited(98765432.98, delimiter: " ", separator: ",")
       "98 765 432,98"
 
-      iex> Number.Delimit.number_to_delimited(Decimal.new(9998.2))
+      iex> Number.Delimit.number_to_delimited(Decimal.from_float(9998.2))
       "9,998.20"
 
       iex> Number.Delimit.number_to_delimited "123456789555555555555555555555555"

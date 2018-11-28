@@ -29,7 +29,7 @@ defmodule Number.Mixfile do
 
   defp deps do
     [
-      {:decimal, "~> 1.2"},
+      {:decimal, "~> 1.5"},
       {:excoveralls, ">= 0.0.0", only: :test},
       {:ex_doc, ">= 0.0.0", only: [:dev, :test]},
       {:inch_ex, ">= 0.0.0", only: [:dev, :test]}
