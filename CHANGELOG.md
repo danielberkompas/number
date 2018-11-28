@@ -10,6 +10,7 @@
 
 **Merged pull requests:**
 
+- Fix deprecation warnings from decimal module [\#40](https://github.com/danielberkompas/number/pull/40) ([akash-akya](https://github.com/akash-akya))
 - Fix Number.SI test failure, upgrade Travis [\#39](https://github.com/danielberkompas/number/pull/39) ([danielberkompas](https://github.com/danielberkompas))
 
 ## [v0.5.7](https://github.com/danielberkompas/number/tree/v0.5.7) (2018-05-17)
