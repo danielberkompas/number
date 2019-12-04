@@ -76,6 +76,7 @@ defmodule Number.Delimit do
       iex> Number.Delimit.number_to_delimited Decimal.new("123456789555555555555555555555555")
       "123,456,789,555,555,555,555,555,555,555,555.00"
   """
+  @spec number_to_delimited(nil, list) :: nil
   @spec number_to_delimited(Number.t(), list) :: String.t()
   def number_to_delimited(number, options \\ [])
   def number_to_delimited(nil, _options), do: nil
