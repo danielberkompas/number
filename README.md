@@ -34,7 +34,7 @@ Get it from Hex:
 
 ```elixir
 defp deps do
-  [{:number, "~> 1.0.0"}]
+  [{:number, "~> 1.0.1"}]
 end
 ```
 

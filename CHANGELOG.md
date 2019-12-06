@@ -1,6 +1,16 @@
-# Change Log
+# Changelog
+
+## [v1.0.1](https://github.com/danielberkompas/number/tree/v1.0.1) (2019-12-05)
+
+[Full Changelog](https://github.com/danielberkompas/number/compare/v1.0.0...v1.0.1)
+
+**Closed issues:**
+
+- number\_to\_delimited shows 2 decimal places.  Readme says otherwise.  [\#43](https://github.com/danielberkompas/number/issues/43)
+- Changelog entry for 1.0.0 [\#41](https://github.com/danielberkompas/number/issues/41)
 
 ## [v1.0.0](https://github.com/danielberkompas/number/tree/v1.0.0) (2018-11-28)
+
 [Full Changelog](https://github.com/danielberkompas/number/compare/v0.5.7...v1.0.0)
 
 **Closed issues:**
@@ -13,6 +23,7 @@
 - Fix Number.SI test failure, upgrade Travis [\#39](https://github.com/danielberkompas/number/pull/39) ([danielberkompas](https://github.com/danielberkompas))
 
 ## [v0.5.7](https://github.com/danielberkompas/number/tree/v0.5.7) (2018-05-17)
+
 [Full Changelog](https://github.com/danielberkompas/number/compare/v0.5.6...v0.5.7)
 
 **Merged pull requests:**
@@ -20,6 +31,7 @@
 - Drop DecimalArithmetic [\#37](https://github.com/danielberkompas/number/pull/37) ([michalmuskala](https://github.com/michalmuskala))
 
 ## [v0.5.6](https://github.com/danielberkompas/number/tree/v0.5.6) (2018-04-19)
+
 [Full Changelog](https://github.com/danielberkompas/number/compare/v0.5.5...v0.5.6)
 
 **Merged pull requests:**
@@ -27,6 +39,7 @@
 - Decimal to currency fix [\#36](https://github.com/danielberkompas/number/pull/36) ([Eptis](https://github.com/Eptis))
 
 ## [v0.5.5](https://github.com/danielberkompas/number/tree/v0.5.5) (2018-02-19)
+
 [Full Changelog](https://github.com/danielberkompas/number/compare/v0.5.4...v0.5.5)
 
 **Closed issues:**
@@ -38,6 +51,7 @@
 - Use Number.t to fix type specs [\#35](https://github.com/danielberkompas/number/pull/35) ([jclem](https://github.com/jclem))
 
 ## [v0.5.4](https://github.com/danielberkompas/number/tree/v0.5.4) (2017-09-07)
+
 [Full Changelog](https://github.com/danielberkompas/number/compare/v0.5.3...v0.5.4)
 
 **Closed issues:**
@@ -49,6 +63,7 @@
 - \[\#32\] Switch to `extra\_applications` [\#33](https://github.com/danielberkompas/number/pull/33) ([danielberkompas](https://github.com/danielberkompas))
 
 ## [v0.5.3](https://github.com/danielberkompas/number/tree/v0.5.3) (2017-08-30)
+
 [Full Changelog](https://github.com/danielberkompas/number/compare/v0.5.2...v0.5.3)
 
 **Closed issues:**
@@ -61,6 +76,7 @@
 - \[\#30\] Fix deprecation warnings on Elixir 1.5 [\#31](https://github.com/danielberkompas/number/pull/31) ([danielberkompas](https://github.com/danielberkompas))
 
 ## [v0.5.2](https://github.com/danielberkompas/number/tree/v0.5.2) (2017-08-05)
+
 [Full Changelog](https://github.com/danielberkompas/number/compare/v0.5.1...v0.5.2)
 
 **Closed issues:**
@@ -74,6 +90,7 @@
 - Update readme for Elixir 1.4 instructions. [\#25](https://github.com/danielberkompas/number/pull/25) ([sergiotapia](https://github.com/sergiotapia))
 
 ## [v0.5.1](https://github.com/danielberkompas/number/tree/v0.5.1) (2017-01-17)
+
 [Full Changelog](https://github.com/danielberkompas/number/compare/v0.5.0...v0.5.1)
 
 **Closed issues:**
@@ -85,6 +102,7 @@
 - Fix 1.4 warnings [\#24](https://github.com/danielberkompas/number/pull/24) ([stuartbain](https://github.com/stuartbain))
 
 ## [v0.5.0](https://github.com/danielberkompas/number/tree/v0.5.0) (2016-11-26)
+
 [Full Changelog](https://github.com/danielberkompas/number/compare/v0.4.2...v0.5.0)
 
 **Closed issues:**
@@ -100,6 +118,7 @@
 - Fix Number.Delimit.number\_to\_delimited cannot handle negative in string [\#17](https://github.com/danielberkompas/number/pull/17) ([raycheung](https://github.com/raycheung))
 
 ## [v0.4.2](https://github.com/danielberkompas/number/tree/v0.4.2) (2016-07-02)
+
 [Full Changelog](https://github.com/danielberkompas/number/compare/v0.4.1...v0.4.2)
 
 **Fixed bugs:**
@@ -116,6 +135,7 @@
 - Don't set display\_number inside conditional [\#13](https://github.com/danielberkompas/number/pull/13) ([bratsche](https://github.com/bratsche))
 
 ## [v0.4.1](https://github.com/danielberkompas/number/tree/v0.4.1) (2015-12-16)
+
 [Full Changelog](https://github.com/danielberkompas/number/compare/v0.4.0...v0.4.1)
 
 **Closed issues:**
@@ -130,6 +150,7 @@
 - Prettify Docs [\#6](https://github.com/danielberkompas/number/pull/6) ([danielberkompas](https://github.com/danielberkompas))
 
 ## [v0.4.0](https://github.com/danielberkompas/number/tree/v0.4.0) (2015-08-04)
+
 [Full Changelog](https://github.com/danielberkompas/number/compare/v0.3.4...v0.4.0)
 
 **Merged pull requests:**
@@ -138,12 +159,15 @@
 - Add Number.Percentage.number\_to\_percentage/2 [\#4](https://github.com/danielberkompas/number/pull/4) ([danielberkompas](https://github.com/danielberkompas))
 
 ## [v0.3.4](https://github.com/danielberkompas/number/tree/v0.3.4) (2015-06-10)
+
 [Full Changelog](https://github.com/danielberkompas/number/compare/v0.3.3...v0.3.4)
 
 ## [v0.3.3](https://github.com/danielberkompas/number/tree/v0.3.3) (2015-06-10)
+
 [Full Changelog](https://github.com/danielberkompas/number/compare/v0.3.2...v0.3.3)
 
 ## [v0.3.2](https://github.com/danielberkompas/number/tree/v0.3.2) (2015-06-10)
+
 [Full Changelog](https://github.com/danielberkompas/number/compare/v0.3.1...v0.3.2)
 
 **Implemented enhancements:**
@@ -151,9 +175,11 @@
 - Improve Keybase Signature Validation [\#3](https://github.com/danielberkompas/number/pull/3) ([danielberkompas](https://github.com/danielberkompas))
 
 ## [v0.3.1](https://github.com/danielberkompas/number/tree/v0.3.1) (2015-06-10)
+
 [Full Changelog](https://github.com/danielberkompas/number/compare/v0.3.0...v0.3.1)
 
 ## [v0.3.0](https://github.com/danielberkompas/number/tree/v0.3.0) (2015-06-10)
+
 [Full Changelog](https://github.com/danielberkompas/number/compare/v0.2.1...v0.3.0)
 
 **Implemented enhancements:**
@@ -165,9 +191,13 @@
 - Update .travis.yml [\#1](https://github.com/danielberkompas/number/pull/1) ([lowks](https://github.com/lowks))
 
 ## [v0.2.1](https://github.com/danielberkompas/number/tree/v0.2.1) (2015-06-09)
+
 [Full Changelog](https://github.com/danielberkompas/number/compare/v0.2.0...v0.2.1)
 
 ## [v0.2.0](https://github.com/danielberkompas/number/tree/v0.2.0) (2015-06-09)
 
+[Full Changelog](https://github.com/danielberkompas/number/compare/b9ed8744fddaaef3a555aa17f82fe8a4772e501f...v0.2.0)
 
-\* *This Change Log was automatically generated by [github_changelog_generator](https://github.com/skywinder/Github-Changelog-Generator)*
+
+
+\* *This Changelog was automatically generated by [github_changelog_generator](https://github.com/github-changelog-generator/github-changelog-generator)*
