@@ -4,7 +4,7 @@ defmodule Number.Human do
   """
 
   import Number.Delimit, only: [number_to_delimited: 2]
-  import Decimal, only: [cmp: 2]
+  import Decimal, only: [compare: 2]
 
   @doc """
   Formats and labels a number with the appropriate English word.
@@ -59,20 +59,20 @@ defmodule Number.Human do
 
   def number_to_human(number, options) do
     cond do
-      cmp(number, ~d(999)) == :gt && cmp(number, ~d(1_000_000)) == :lt ->
+      compare(number, ~d(999)) == :gt && compare(number, ~d(1_000_000)) == :lt ->
         delimit(number, ~d(1_000), "Thousand", options)
 
-      cmp(number, ~d(1_000_000)) in [:gt, :eq] and cmp(number, ~d(1_000_000_000)) == :lt ->
+      compare(number, ~d(1_000_000)) in [:gt, :eq] and compare(number, ~d(1_000_000_000)) == :lt ->
         delimit(number, ~d(1_000_000), "Million", options)
 
-      cmp(number, ~d(1_000_000_000)) in [:gt, :eq] and cmp(number, ~d(1_000_000_000_000)) == :lt ->
+      compare(number, ~d(1_000_000_000)) in [:gt, :eq] and compare(number, ~d(1_000_000_000_000)) == :lt ->
         delimit(number, ~d(1_000_000_000), "Billion", options)
 
-      cmp(number, ~d(1_000_000_000_000)) in [:gt, :eq] and
-          cmp(number, ~d(1_000_000_000_000_000)) == :lt ->
+      compare(number, ~d(1_000_000_000_000)) in [:gt, :eq] and
+          compare(number, ~d(1_000_000_000_000_000)) == :lt ->
         delimit(number, ~d(1_000_000_000_000), "Trillion", options)
 
-      cmp(number, ~d(1_000_000_000_000_000)) in [:gt, :eq] ->
+      compare(number, ~d(1_000_000_000_000_000)) in [:gt, :eq] ->
         delimit(number, ~d(1_000_000_000_000_000), "Quadrillion", options)
 
       true ->
