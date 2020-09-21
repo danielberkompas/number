@@ -1,6 +1,14 @@
 # Changelog
 
-## [v1.0.1](https://github.com/danielberkompas/number/tree/v1.0.1) (2019-12-05)
+## [1.0.2](https://github.com/danielberkompas/number/tree/1.0.2) (2020-09-21)
+
+[Full Changelog](https://github.com/danielberkompas/number/compare/v1.0.1...1.0.2)
+
+**Merged pull requests:**
+
+- Dependencies upgrade, Decimal 2.0 [\#46](https://github.com/danielberkompas/number/pull/46) ([nmbrone](https://github.com/nmbrone))
+
+## [v1.0.1](https://github.com/danielberkompas/number/tree/v1.0.1) (2019-12-06)
 
 [Full Changelog](https://github.com/danielberkompas/number/compare/v1.0.0...v1.0.1)
 
@@ -8,6 +16,10 @@
 
 - number\_to\_delimited shows 2 decimal places.  Readme says otherwise.  [\#43](https://github.com/danielberkompas/number/issues/43)
 - Changelog entry for 1.0.0 [\#41](https://github.com/danielberkompas/number/issues/41)
+
+**Merged pull requests:**
+
+- fix: add nil @spec overload to number\_to\_delimited [\#44](https://github.com/danielberkompas/number/pull/44) ([superhawk610](https://github.com/superhawk610))
 
 ## [v1.0.0](https://github.com/danielberkompas/number/tree/v1.0.0) (2018-11-28)
 
