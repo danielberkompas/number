@@ -4,7 +4,7 @@ defmodule Number.Human do
   """
 
   import Number.Delimit, only: [number_to_delimited: 2]
-  import Decimal, only: [compare: 2]
+  import Number, only: [compare: 2]
 
   @doc """
   Formats and labels a number with the appropriate English word.

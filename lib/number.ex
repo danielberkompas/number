@@ -37,4 +37,17 @@ defmodule Number do
       import Number.Human
     end
   end
+
+  def compare(a, b) do
+    result = Decimal.compare(a, b)
+
+    cond do
+      result in [:lt, Decimal.new(-1)] ->
+        :lt
+      result in [:gt, Decimal.new(1)] ->
+        :gt
+      result in [:eq, Decimal.new(0)] ->
+        :eq
+    end
+  end
 end
