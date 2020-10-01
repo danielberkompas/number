@@ -1,8 +1,21 @@
 # Changelog
 
-## [1.0.2](https://github.com/danielberkompas/number/tree/1.0.2) (2020-09-21)
+## [v1.0.3](https://github.com/danielberkompas/number/tree/v1.0.3) (2020-10-01)
 
-[Full Changelog](https://github.com/danielberkompas/number/compare/v1.0.1...1.0.2)
+[Full Changelog](https://github.com/danielberkompas/number/compare/v1.0.2...v1.0.3)
+
+**Closed issues:**
+
+- Broken behavior with Decimal version 1.x [\#47](https://github.com/danielberkompas/number/issues/47)
+- Decimal 2.0 has been released, Number requires ~\>1.5 [\#45](https://github.com/danielberkompas/number/issues/45)
+
+**Merged pull requests:**
+
+- \[\#47\] Add compare/2 shim to support Decimal 1.5 [\#49](https://github.com/danielberkompas/number/pull/49) ([danielberkompas](https://github.com/danielberkompas))
+
+## [v1.0.2](https://github.com/danielberkompas/number/tree/v1.0.2) (2020-09-21)
+
+[Full Changelog](https://github.com/danielberkompas/number/compare/v1.0.1...v1.0.2)
 
 **Merged pull requests:**
 

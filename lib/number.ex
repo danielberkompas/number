@@ -1,8 +1,8 @@
 defmodule Number do
   @moduledoc """
-  `Number` is a pretentiously-named library which provides functions to convert
-  numbers into a variety of different formats. Ultimately, it aims to be a
-  partial or complete clone of [ActionView::Helpers::NumberHelper](http://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html)
+  `Number` provides functions to convert numbers into a variety of different
+  formats. Ultimately, it aims to be a partial clone of
+  [ActionView::Helpers::NumberHelper](http://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html)
   from Rails.
 
   If you want to import all of the functions provided by `Number`, simply `use`
