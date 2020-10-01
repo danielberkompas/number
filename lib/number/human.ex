@@ -4,7 +4,7 @@ defmodule Number.Human do
   """
 
   import Number.Delimit, only: [number_to_delimited: 2]
-  import Decimal, only: [compare: 2]
+  import Number.Decimal, only: [compare: 2]
 
   @doc """
   Formats and labels a number with the appropriate English word.
@@ -65,7 +65,8 @@ defmodule Number.Human do
       compare(number, ~d(1_000_000)) in [:gt, :eq] and compare(number, ~d(1_000_000_000)) == :lt ->
         delimit(number, ~d(1_000_000), "Million", options)
 
-      compare(number, ~d(1_000_000_000)) in [:gt, :eq] and compare(number, ~d(1_000_000_000_000)) == :lt ->
+      compare(number, ~d(1_000_000_000)) in [:gt, :eq] and
+          compare(number, ~d(1_000_000_000_000)) == :lt ->
         delimit(number, ~d(1_000_000_000), "Billion", options)
 
       compare(number, ~d(1_000_000_000_000)) in [:gt, :eq] and

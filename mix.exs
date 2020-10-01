@@ -10,6 +10,7 @@ defmodule Number.Mixfile do
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
       test_coverage: [tool: ExCoveralls],
+      lockfile: lockfile(),
       preferred_cli_env: [
         coveralls: :test,
         "coveralls.detail": :test,
@@ -51,5 +52,12 @@ defmodule Number.Mixfile do
         "Github" => "https://github.com/danielberkompas/number"
       }
     ]
+  end
+
+  defp lockfile() do
+    case System.get_env("DECIMAL_VERSION") do
+      "1" -> "mix-decimal1.lock"
+      _ -> "mix.lock"
+    end
   end
 end
