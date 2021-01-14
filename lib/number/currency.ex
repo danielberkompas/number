@@ -39,14 +39,15 @@ defmodule Number.Currency do
   Default config for these options can be specified in the `Number`
   application configuration.
 
-      config :number, currency: [
-                        unit: "£",
-                        precision: 2,
-                        delimiter: ",",
-                        separator: ".",
-                        format: "%u%n",           # "£30.00"
-                        negative_format: "(%u%n)" # "(£30.00)"
-                      ]
+      config :number,
+        currency: [
+          unit: "£",
+          precision: 2,
+          delimiter: ",",
+          separator: ".",
+          format: "%u%n",           # "£30.00"
+          negative_format: "(%u%n)" # "(£30.00)"
+        ]
 
   ## Examples
 
@@ -91,6 +92,7 @@ defmodule Number.Currency do
 
       iex> Number.Currency.number_to_currency(Decimal.from_float(-100.01), unit: "$", separator: ",", delimiter: ".", negative_format: "- %u %n")
       "- $ 100,01"
+
   """
   @spec number_to_currency(Number.t(), list) :: String.t()
   def number_to_currency(number, options \\ [])

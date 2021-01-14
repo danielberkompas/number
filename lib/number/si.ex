@@ -54,8 +54,8 @@ defmodule Number.SI do
 
   * `:base` - Use 1024 if you wish to format bytes.  Default: 1000
 
-  * `:separator` - The string to place between the scaled number and the
-                   prefix + unit. Perhaps you want a space here. Default: ""
+  * `:separator` - The string to place between the scaled number and the `prefix
+    + unit`. Perhaps you want a space here. Default: ""
 
   * `:unit` - The unit of measurement, e.g. "M" for Meters. Default: ""
 
@@ -65,11 +65,13 @@ defmodule Number.SI do
 
   Default configuration for these options can be specified in the `Number`
   application configuration.
-      config :number, si: [
-                        separator: " ",
-                        precision: 4,
-                        trim: true
-                      ]
+
+      config :number,
+        si: [
+          separator: " ",
+          precision: 4,
+          trim: true
+        ]
 
   ## Examples
 

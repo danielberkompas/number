@@ -1,11 +1,14 @@
 defmodule Number.Mixfile do
   use Mix.Project
 
+  @source_url "https://github.com/danielberkompas/number"
+  @version "1.0.3"
+
   def project do
     [
       app: :number,
       description: "Convert numbers to various string formats, such as currency",
-      version: "1.0.3",
+      version: @version,
       elixir: "~> 1.0",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
@@ -39,7 +42,10 @@ defmodule Number.Mixfile do
 
   defp docs do
     [
-      main: Number
+      main: "readme",
+      source_url: @source_url,
+      source_ref: "v#{@version}",
+      extras: ["CHANGELOG.md", "README.md"]
     ]
   end
 
@@ -49,7 +55,8 @@ defmodule Number.Mixfile do
       maintainers: ["Daniel Berkompas"],
       licenses: ["MIT"],
       links: %{
-        "Github" => "https://github.com/danielberkompas/number"
+        "Changelog" => "https://hexdocs.pm/number/changelog.html",
+        "GitHub" => @source_url
       }
     ]
   end

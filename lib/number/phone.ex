@@ -29,12 +29,14 @@ defmodule Number.Phone do
   Default config for these options can be specified in the `Number`
   application configuration.
 
-      config :number, phone: [
-                        area_code: false,
-                        delimiter: "-",
-                        extension: nil,
-                        country_code: nil
-                      ]
+      config :number,
+        phone: [
+          area_code: false,
+          delimiter: "-",
+          extension: nil,
+          country_code: nil
+        ]
+
   ## Examples
 
       iex> Number.Phone.number_to_phone(nil)

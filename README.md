@@ -3,6 +3,12 @@
 [![Build Status](https://travis-ci.org/danielberkompas/number.svg?branch=master)](https://travis-ci.org/danielberkompas/number)
 [![Inline docs](http://inch-ci.org/github/danielberkompas/number.svg?branch=master)](http://inch-ci.org/github/danielberkompas/number)
 [![Coverage Status](https://coveralls.io/repos/github/danielberkompas/number/badge.svg)](https://coveralls.io/github/danielberkompas/number)
+[![Module Version](https://img.shields.io/hexpm/v/number.svg)](https://hex.pm/packages/number)
+[![Hex Docs](https://img.shields.io/badge/hex-docs-lightgreen.svg)](https://hexdocs.pm/number/)
+[![Total Download](https://img.shields.io/hexpm/dt/number.svg)](https://hex.pm/packages/number)
+[![License](https://img.shields.io/hexpm/l/number.svg)](https://github.com/danielberkompas/number/blob/master/LICENSE)
+[![Last Updated](https://img.shields.io/github/last-commit/danielberkompas/number.svg)](https://github.com/danielberkompas/number/commits/master)
+
 
 `Number` is an [Elixir](https://github.com/elixir-lang/elixir) library which
 provides functions to convert numbers into a variety of different formats.
@@ -37,7 +43,7 @@ defp deps do
 end
 ```
 
-Then run `mix deps.get`. 
+Then run `mix deps.get`.
 
 ## Usage
 
@@ -63,4 +69,4 @@ See the [Hex documentation](http://hexdocs.pm/number/) for more information
 about the modules provided by `Number`.
 
 ## License
-MIT. See [LICENSE](/LICENSE) for more details.
+MIT. See [LICENSE](https://github.com/danielberkompas/number/blob/master/LICENSE) for more details.
