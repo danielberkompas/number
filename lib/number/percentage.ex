@@ -29,11 +29,12 @@ defmodule Number.Percentage do
   Default configuration for these options can be specified in the `Number`
   application configuration.
 
-      config :number, percentage: [
-                        delimiter: ",",
-                        separator: ".",
-                        precision: 2
-                      ]
+      config :number,
+        percentage: [
+          delimiter: ",",
+          separator: ".",
+          precision: 2
+        ]
 
   ## Examples
 
