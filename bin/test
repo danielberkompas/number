@@ -7,7 +7,7 @@ mix compile --force --warnings-as-errors || { echo 'Please fix all compiler warn
 mix docs || { echo 'Docs did not generate!'; exit 1; }
 
 if [ $CI ]; then
-  mix coveralls.travis || { echo 'Elixir tests failed!'; exit 1; }
+  mix coveralls.semaphore || { echo 'Elixir tests failed!'; exit 1; }
 else
   mix test || { echo 'Elixir tests failed!'; exit 1; }
 fi

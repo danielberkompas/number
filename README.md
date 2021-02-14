@@ -1,8 +1,8 @@
 # Number
 
-[![Build Status](https://travis-ci.org/danielberkompas/number.svg?branch=master)](https://travis-ci.org/danielberkompas/number)
+[![Build Status](https://danielberkompas.semaphoreci.com/badges/number/branches/master.svg?style=shields)](https://danielberkompas.semaphoreci.com/projects/number)
 [![Inline docs](http://inch-ci.org/github/danielberkompas/number.svg?branch=master)](http://inch-ci.org/github/danielberkompas/number)
-[![Coverage Status](https://coveralls.io/repos/github/danielberkompas/number/badge.svg)](https://coveralls.io/github/danielberkompas/number)
+[![Coverage Status](https://coveralls.io/repos/github/danielberkompas/number/badge.svg?branch=master)](https://coveralls.io/github/danielberkompas/number?branch=master)
 [![Module Version](https://img.shields.io/hexpm/v/number.svg)](https://hex.pm/packages/number)
 [![Hex Docs](https://img.shields.io/badge/hex-docs-lightgreen.svg)](https://hexdocs.pm/number/)
 [![Total Download](https://img.shields.io/hexpm/dt/number.svg)](https://hex.pm/packages/number)
