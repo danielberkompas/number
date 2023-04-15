@@ -51,9 +51,7 @@ defmodule Number.Human do
       |> number_to_human(options)
     else
       raise ArgumentError,
-            "number must be a float, integer or implement `Number.Conversion` protocol, was #{
-              inspect(number)
-            }"
+            "number must be a float, integer or implement `Number.Conversion` protocol, was #{inspect(number)}"
     end
   end
 
