@@ -42,6 +42,7 @@ defmodule Number.Human do
       ** (ArgumentError) number must be a float, integer or implement `Number.Conversion` protocol, was 'charlist'
 
   """
+  @spec number_to_human(Number.t(), Keyword.t()) :: String.t()
   def number_to_human(number, options \\ [])
 
   def number_to_human(number, options) when not is_map(number) do
@@ -99,6 +100,7 @@ defmodule Number.Human do
       "4001st"
 
   """
+  @spec number_to_ordinal(Number.t()) :: String.t()
   def number_to_ordinal(number) when is_integer(number) do
     sfx = ~w(th st nd rd th th th th th th)
 

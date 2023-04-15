@@ -96,7 +96,7 @@ defmodule Number.SI do
       iex> Number.SI.number_to_si('charlist')
       ** (ArgumentError) number must be a float, integer or implement `Number.Conversion` protocol, was 'charlist'
   """
-  @spec number_to_si(number, list) :: String.t()
+  @spec number_to_si(Number.t(), Keyword.t()) :: String.t()
   def number_to_si(number, options \\ [])
 
   def number_to_si(number, options) when is_number(number) do
