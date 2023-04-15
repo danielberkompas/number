@@ -116,9 +116,7 @@ defmodule Number.SI do
       |> number_to_si(options)
     else
       raise ArgumentError,
-            "number must be a float, integer or implement `Number.Conversion` protocol, was #{
-              inspect(number)
-            }"
+            "number must be a float, integer or implement `Number.Conversion` protocol, was #{inspect(number)}"
     end
   end
 

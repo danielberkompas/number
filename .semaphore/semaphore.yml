@@ -3,7 +3,7 @@ name: CI Build
 agent:
   machine:
     type: e1-standard-2
-    os_image: ubuntu1804
+    os_image: ubuntu2004
 auto_cancel:
   running:
     when: "true"
@@ -24,7 +24,7 @@ blocks:
           matrix:
             - env_var: ELIXIR_VERSION
               values:
-                - 1.11.3
+                - 1.14.3
             - env_var: DECIMAL_VERSION
               values:
                 - "1"
