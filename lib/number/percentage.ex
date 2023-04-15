@@ -56,7 +56,7 @@ defmodule Number.Percentage do
       iex> Number.Percentage.number_to_percentage(Decimal.from_float(59.236), precision: 2)
       "59.24%"
   """
-  @spec number_to_percentage(number, Keyword.t()) :: String.t()
+  @spec number_to_percentage(Number.t(), Keyword.t()) :: String.t()
   def number_to_percentage(number, options \\ [])
 
   def number_to_percentage(number, options) do
