@@ -7,6 +7,7 @@ defmodule Number.Decimal do
   # In Decimal >=2.0, Decimal.compare/2 returns :lt, :gt, :eq.
   #
   # See https://github.com/danielberkompas/number/issues/47
+  @spec compare(Decimal.t(), Decimal.t()) :: :lt | :gt | :eq
   def compare(a, b) do
     result = Decimal.compare(a, b)
 
