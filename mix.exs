@@ -2,7 +2,7 @@ defmodule Number.Mixfile do
   use Mix.Project
 
   @source_url "https://github.com/danielberkompas/number"
-  @version "1.0.3"
+  @version "1.0.4"
 
   def project do
     [

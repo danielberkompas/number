@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.0.4](https://github.com/danielberkompas/number/tree/1.0.4) (2023-05-26)
+
+[Full Changelog](https://github.com/danielberkompas/number/compare/v1.0.3...1.0.4)
+
+**Merged pull requests:**
+
+- :arrow\_up: Update `ex_doc` [\#60](https://github.com/danielberkompas/number/pull/60) ([danielberkompas](https://github.com/danielberkompas))
+- :recycle: Replace `Mix.Config` with `Config` [\#59](https://github.com/danielberkompas/number/pull/59) ([danielberkompas](https://github.com/danielberkompas))
+- :green\_heart: Update CI settings [\#58](https://github.com/danielberkompas/number/pull/58) ([danielberkompas](https://github.com/danielberkompas))
+- :label: Use `Number.t` and `Keyword.t` in typespecs [\#57](https://github.com/danielberkompas/number/pull/57) ([danielberkompas](https://github.com/danielberkompas))
+- Fix percentage spec [\#56](https://github.com/danielberkompas/number/pull/56) ([fiodorbaczynski](https://github.com/fiodorbaczynski))
+- Update `number_to_phone/2` typespec [\#52](https://github.com/danielberkompas/number/pull/52) ([lleger](https://github.com/lleger))
+- Misc doc changes [\#51](https://github.com/danielberkompas/number/pull/51) ([kianmeng](https://github.com/kianmeng))
+
 ## [v1.0.3](https://github.com/danielberkompas/number/tree/v1.0.3) (2020-10-01)
 
 [Full Changelog](https://github.com/danielberkompas/number/compare/v1.0.2...v1.0.3)
@@ -85,7 +99,7 @@
 
 **Merged pull requests:**
 
-- \[\#32\] Switch to `extra\_applications` [\#33](https://github.com/danielberkompas/number/pull/33) ([danielberkompas](https://github.com/danielberkompas))
+- \[\#32\] Switch to `extra_applications` [\#33](https://github.com/danielberkompas/number/pull/33) ([danielberkompas](https://github.com/danielberkompas))
 
 ## [v0.5.3](https://github.com/danielberkompas/number/tree/v0.5.3) (2017-08-30)
 
@@ -209,7 +223,7 @@
 
 **Implemented enhancements:**
 
-- Add `number\_to\_phone` function [\#2](https://github.com/danielberkompas/number/pull/2) ([danielberkompas](https://github.com/danielberkompas))
+- Add `number_to_phone` function [\#2](https://github.com/danielberkompas/number/pull/2) ([danielberkompas](https://github.com/danielberkompas))
 
 **Merged pull requests:**
 
