@@ -38,6 +38,9 @@ defmodule Number.Percentage do
 
   ## Examples
 
+      iex> Number.Percentage.number_to_percentage(nil)
+      nil
+
       iex> Number.Percentage.number_to_percentage(100)
       "100.000%"
 
@@ -58,6 +61,7 @@ defmodule Number.Percentage do
   """
   @spec number_to_percentage(Number.t(), Keyword.t()) :: String.t()
   def number_to_percentage(number, options \\ [])
+  def number_to_percentage(nil, _options), do: nil
 
   def number_to_percentage(number, options) do
     options = Keyword.merge(config(), options)

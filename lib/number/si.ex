@@ -74,6 +74,8 @@ defmodule Number.SI do
         ]
 
   ## Examples
+      iex> Number.SI.number_to_si(nil)
+      nil
 
       iex> Number.SI.number_to_si(1210000000, unit: "W")
       "1.21GW"
@@ -98,6 +100,7 @@ defmodule Number.SI do
   """
   @spec number_to_si(Number.t(), Keyword.t()) :: String.t()
   def number_to_si(number, options \\ [])
+  def number_to_si(nil, _options), do: nil
 
   def number_to_si(number, options) when is_number(number) do
     options = Keyword.merge(config(), options)

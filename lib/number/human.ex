@@ -11,6 +11,9 @@ defmodule Number.Human do
 
   ## Examples
 
+      iex> Number.Human.number_to_human(nil)
+      nil
+
       iex> Number.Human.number_to_human(123)
       "123.00"
 
@@ -44,6 +47,7 @@ defmodule Number.Human do
   """
   @spec number_to_human(Number.t(), Keyword.t()) :: String.t()
   def number_to_human(number, options \\ [])
+  def number_to_human(nil, _options), do: nil
 
   def number_to_human(number, options) when not is_map(number) do
     if Number.Conversion.impl_for(number) do
