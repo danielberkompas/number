@@ -24,7 +24,7 @@ blocks:
           matrix:
             - env_var: ELIXIR_VERSION
               values:
-                - 1.14.3
+                - 1.16.0
             - env_var: DECIMAL_VERSION
               values:
                 - "1"
