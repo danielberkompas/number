@@ -1,8 +1,17 @@
 # Changelog
 
-## [1.0.4](https://github.com/danielberkompas/number/tree/1.0.4) (2023-05-26)
+## [v1.0.5](https://github.com/danielberkompas/number/tree/v1.0.5) (2024-04-06)
 
-[Full Changelog](https://github.com/danielberkompas/number/compare/v1.0.3...1.0.4)
+[Full Changelog](https://github.com/danielberkompas/number/compare/v1.0.4...v1.0.5)
+
+**Merged pull requests:**
+
+- ✅ Test against Elixir 1.16 [\#63](https://github.com/danielberkompas/number/pull/63) ([danielberkompas](https://github.com/danielberkompas))
+- add missing nil support [\#62](https://github.com/danielberkompas/number/pull/62) ([bkilshaw](https://github.com/bkilshaw))
+
+## [v1.0.4](https://github.com/danielberkompas/number/tree/v1.0.4) (2023-05-26)
+
+[Full Changelog](https://github.com/danielberkompas/number/compare/v1.0.3...v1.0.4)
 
 **Merged pull requests:**
 
