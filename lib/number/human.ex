@@ -42,7 +42,7 @@ defmodule Number.Human do
       "5.00 Thousand"
 
       iex> Number.Human.number_to_human('charlist')
-      ** (ArgumentError) number must be a float, integer or implement `Number.Conversion` protocol, was 'charlist'
+      ** (ArgumentError) number must be a float, integer or implement `Number.Conversion` protocol, was ~c"charlist"
 
   """
   @spec number_to_human(Number.t(), Keyword.t()) :: String.t()
