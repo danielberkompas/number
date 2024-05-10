@@ -41,6 +41,30 @@ defmodule Number.Human do
       iex> Number.Human.number_to_human(Decimal.new("5000.0"))
       "5.00 Thousand"
 
+      iex> Number.Human.number_to_human(123, units: ["B", "KB", "MB", "GB", "TB", "PB"])
+      "123.00 B"
+
+      iex> Number.Human.number_to_human(1234, units: ["B", "KB", "MB", "GB", "TB", "PB"])
+      "1.23 KB"
+
+      iex> Number.Human.number_to_human(999001, units: ["B", "KB", "MB", "GB", "TB", "PB"])
+      "999.00 KB"
+
+      iex> Number.Human.number_to_human(1234567, units: ["B", "KB", "MB", "GB", "TB", "PB"])
+      "1.23 MB"
+
+      iex> Number.Human.number_to_human(1234567890, units: ["B", "KB", "MB", "GB", "TB", "PB"])
+      "1.23 GB"
+
+      iex> Number.Human.number_to_human(1234567890123, units: ["B", "KB", "MB", "GB", "TB", "PB"])
+      "1.23 TB"
+
+      iex> Number.Human.number_to_human(1234567890123456, units: ["B", "KB", "MB", "GB", "TB", "PB"])
+      "1.23 PB"
+
+      iex> Number.Human.number_to_human(1234567890123456789, units: ["B", "KB", "MB", "GB", "TB", "PB"])
+      "1,234.57 PB"
+
       iex> Number.Human.number_to_human('charlist')
       ** (ArgumentError) number must be a float, integer or implement `Number.Conversion` protocol, was ~c"charlist"
 
@@ -61,23 +85,28 @@ defmodule Number.Human do
   end
 
   def number_to_human(number, options) do
+    units = Keyword.get(options, :units, [])
+
     cond do
-      compare(number, ~d(999)) == :gt && compare(number, ~d(1_000_000)) == :lt ->
-        delimit(number, ~d(1_000), "Thousand", options)
+      compare(number, ~d(1_000)) == :lt ->
+        delimit(number, ~d(1), Enum.at(units, 0, ""), options)
+
+      compare(number, ~d(1_000)) in [:gt, :eq] && compare(number, ~d(1_000_000)) == :lt ->
+        delimit(number, ~d(1_000), Enum.at(units, 1, "Thousand"), options)
 
       compare(number, ~d(1_000_000)) in [:gt, :eq] and compare(number, ~d(1_000_000_000)) == :lt ->
-        delimit(number, ~d(1_000_000), "Million", options)
+        delimit(number, ~d(1_000_000), Enum.at(units, 2, "Million"), options)
 
       compare(number, ~d(1_000_000_000)) in [:gt, :eq] and
           compare(number, ~d(1_000_000_000_000)) == :lt ->
-        delimit(number, ~d(1_000_000_000), "Billion", options)
+        delimit(number, ~d(1_000_000_000), Enum.at(units, 3, "Billion"), options)
 
       compare(number, ~d(1_000_000_000_000)) in [:gt, :eq] and
           compare(number, ~d(1_000_000_000_000_000)) == :lt ->
-        delimit(number, ~d(1_000_000_000_000), "Trillion", options)
+        delimit(number, ~d(1_000_000_000_000), Enum.at(units, 4, "Trillion"), options)
 
       compare(number, ~d(1_000_000_000_000_000)) in [:gt, :eq] ->
-        delimit(number, ~d(1_000_000_000_000_000), "Quadrillion", options)
+        delimit(number, ~d(1_000_000_000_000_000), Enum.at(units, 5, "Quadrillion"), options)
 
       true ->
         number_to_delimited(number, options)
@@ -130,6 +159,6 @@ defmodule Number.Human do
       |> Decimal.div(divisor)
       |> number_to_delimited(options)
 
-    number <> " " <> label
+    String.trim(number <> " " <> label)
   end
 end
