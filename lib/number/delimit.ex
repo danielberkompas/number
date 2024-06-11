@@ -76,6 +76,9 @@ defmodule Number.Delimit do
 
       iex> Number.Delimit.number_to_delimited Decimal.new("123456789555555555555555555555555")
       "123,456,789,555,555,555,555,555,555,555,555.00"
+
+      iex> Number.Delimit.number_to_delimited(%YourCustomNumberConversionType{})
+      "1,000.00"
   """
   @spec number_to_delimited(nil, Keyword.t()) :: nil
   @spec number_to_delimited(Number.t() | String.t(), Keyword.t()) :: String.t()
@@ -101,7 +104,6 @@ defmodule Number.Delimit do
 
         {:error, other} ->
           other
-          |> to_string
           |> Number.Conversion.to_decimal()
           |> delimit_decimal(options[:delimiter], options[:separator], options[:precision])
       end

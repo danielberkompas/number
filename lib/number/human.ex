@@ -41,6 +41,9 @@ defmodule Number.Human do
       iex> Number.Human.number_to_human(Decimal.new("5000.0"))
       "5.00 Thousand"
 
+      iex> Number.Human.number_to_human(%YourCustomNumberConversionType{})
+      "1.00 Thousand"
+
       iex> Number.Human.number_to_human('charlist')
       ** (ArgumentError) number must be a float, integer or implement `Number.Conversion` protocol, was ~c"charlist"
 
@@ -49,18 +52,7 @@ defmodule Number.Human do
   def number_to_human(number, options \\ [])
   def number_to_human(nil, _options), do: nil
 
-  def number_to_human(number, options) when not is_map(number) do
-    if Number.Conversion.impl_for(number) do
-      number
-      |> Number.Conversion.to_decimal()
-      |> number_to_human(options)
-    else
-      raise ArgumentError,
-            "number must be a float, integer or implement `Number.Conversion` protocol, was #{inspect(number)}"
-    end
-  end
-
-  def number_to_human(number, options) do
+  def number_to_human(%Decimal{} = number, options) do
     cond do
       compare(number, ~d(999)) == :gt && compare(number, ~d(1_000_000)) == :lt ->
         delimit(number, ~d(1_000), "Thousand", options)
@@ -81,6 +73,17 @@ defmodule Number.Human do
 
       true ->
         number_to_delimited(number, options)
+    end
+  end
+
+  def number_to_human(number, options) do
+    if Number.Conversion.impl_for(number) do
+      number
+      |> Number.Conversion.to_decimal()
+      |> number_to_human(options)
+    else
+      raise ArgumentError,
+            "number must be a float, integer or implement `Number.Conversion` protocol, was #{inspect(number)}"
     end
   end
 

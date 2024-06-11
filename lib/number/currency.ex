@@ -93,6 +93,8 @@ defmodule Number.Currency do
       iex> Number.Currency.number_to_currency(Decimal.from_float(-100.01), unit: "$", separator: ",", delimiter: ".", negative_format: "- %u %n")
       "- $ 100,01"
 
+      iex> Number.Currency.number_to_currency(%YourCustomNumberConversionType{})
+      "$1,000.00"
   """
   @spec number_to_currency(Number.t(), Keyword.t()) :: String.t()
   def number_to_currency(number, options \\ [])
@@ -109,7 +111,7 @@ defmodule Number.Currency do
   end
 
   defp get_format(number, options) do
-    number = if is_float(number), do: Decimal.from_float(number), else: Decimal.new(number)
+    number = Number.Conversion.to_decimal(number)
 
     case Number.Decimal.compare(number, Decimal.new(0)) do
       :lt -> {Decimal.abs(number), options[:negative_format] || "-#{options[:format]}"}
