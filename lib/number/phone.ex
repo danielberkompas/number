@@ -71,6 +71,9 @@ defmodule Number.Phone do
 
       iex> Number.Phone.number_to_phone(1235551234, country_code: 1, extension: 1343, delimiter: ".")
       "+1.123.555.1234 x 1343"
+
+      iex> Number.Phone.number_to_phone(%YourCustomNumberConversionType{})
+      "1000"
   """
   @spec number_to_phone(Number.t() | String.t(), Keyword.t()) :: String.t()
   def number_to_phone(number, options \\ [])
