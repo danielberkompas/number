@@ -94,7 +94,7 @@ defmodule Number.Currency do
       "- $ 100,01"
 
   """
-  @spec number_to_currency(Number.t(), Keyword.t()) :: String.t()
+  @spec number_to_currency(Number.t(), Keyword.t()) :: String.t() | nil
   def number_to_currency(number, options \\ [])
   def number_to_currency(nil, _options), do: nil
 
