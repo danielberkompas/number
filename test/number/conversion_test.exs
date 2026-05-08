@@ -23,7 +23,8 @@ defmodule Number.ConversionTest do
 
     test "cannot natively handle any other types" do
       assert_raise Protocol.UndefinedError, fn ->
-        to_float(%{hello: "world"})
+        # Use :erlang.apply/3 to bypass the compile-time type checker
+        :erlang.apply(Number.Conversion, :to_float, [%{hello: "world"}])
       end
     end
   end
