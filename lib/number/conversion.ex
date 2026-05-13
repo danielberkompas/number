@@ -21,7 +21,12 @@ defimpl Number.Conversion, for: BitString do
 
   def to_decimal(value) do
     string = String.Chars.to_string(value)
-    Decimal.new(string)
+
+    case Decimal.parse(string, max_digits: 100) do
+      {decimal, ""} -> decimal
+      {decimal, _rest} -> decimal
+      :error -> raise ArgumentError, "could not convert #{inspect(value)} to Decimal"
+    end
   end
 end
 
