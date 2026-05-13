@@ -1,5 +1,14 @@
 # Changelog
 
+## [v1.0.6](https://github.com/danielberkompas/number/tree/v1.0.6) (2026-05-14)
+- allow decimal 3.0 - upgrade away from vulnerable versions
+- Remove hackey (vulnerable version) and no longer needed for coveralls
+- address compiler warnings
+
+[Full Changelog](https://github.com/danielberkompas/number/compare/v1.0.5...v1.0.6)
+
+**Merged pull requests:**
+
 ## [v1.0.5](https://github.com/danielberkompas/number/tree/v1.0.5) (2024-04-06)
 
 [Full Changelog](https://github.com/danielberkompas/number/compare/v1.0.4...v1.0.5)

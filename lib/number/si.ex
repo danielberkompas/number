@@ -95,7 +95,7 @@ defmodule Number.SI do
       iex> Number.SI.number_to_si(Decimal.new(1210000000))
       "1.21G"
 
-      iex> Number.SI.number_to_si('charlist')
+      iex> Number.SI.number_to_si(~c"charlist")
       ** (ArgumentError) number must be a float, integer or implement `Number.Conversion` protocol, was ~c"charlist"
   """
   @spec number_to_si(Number.t(), Keyword.t()) :: String.t()

@@ -41,7 +41,7 @@ defmodule Number.Human do
       iex> Number.Human.number_to_human(Decimal.new("5000.0"))
       "5.00 Thousand"
 
-      iex> Number.Human.number_to_human('charlist')
+      iex> Number.Human.number_to_human(~c"charlist")
       ** (ArgumentError) number must be a float, integer or implement `Number.Conversion` protocol, was ~c"charlist"
 
   """
