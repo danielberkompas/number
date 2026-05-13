@@ -50,7 +50,7 @@ defmodule Number.Percentage do
       iex> Number.Percentage.number_to_percentage(100, precision: 0)
       "100%"
 
-      iex> Number.Percentage.number_to_percentage(1000, delimiter: '.', separator: ',')
+      iex> Number.Percentage.number_to_percentage(1000, delimiter: ".", separator: ",")
       "1.000,000%"
 
       iex> Number.Percentage.number_to_percentage(302.24398923423, precision: 5)

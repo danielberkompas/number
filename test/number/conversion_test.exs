@@ -23,7 +23,7 @@ defmodule Number.ConversionTest do
 
     test "cannot natively handle any other types" do
       assert_raise Protocol.UndefinedError, fn ->
-        to_float(%{hello: "world"})
+        apply(Number.Conversion, :to_float, [%{hello: "world"}])
       end
     end
   end
