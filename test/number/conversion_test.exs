@@ -23,18 +23,30 @@ defmodule Number.ConversionTest do
 
     test "cannot natively handle any other types" do
       assert_raise Protocol.UndefinedError, fn ->
-        to_float(%{hello: "world"})
+        # Use :erlang.apply/3 to bypass the compile-time type checker
+        :erlang.apply(Number.Conversion, :to_float, [%{hello: "world"}])
       end
     end
   end
 
-  describe ".to_decimal/2" do
+  describe ".to_decimal/1" do
     test "converts float to decimal" do
       assert to_decimal(123.45) == Decimal.from_float(123.45)
     end
 
     test "leaves decimal alone" do
       assert to_decimal(Decimal.from_float(123.45)) == Decimal.from_float(123.45)
+    end
+
+    test "converts high-precision string to decimal" do
+      {expected, ""} = Decimal.parse("0.02053473047423571351409743977530517", max_digits: 100)
+      assert to_decimal("0.02053473047423571351409743977530517") == expected
+    end
+
+    test "raises on invalid string" do
+      assert_raise ArgumentError, fn ->
+        to_decimal("not_a_number")
+      end
     end
   end
 end

@@ -14,16 +14,21 @@ defmodule Number.Mixfile do
       start_permanent: Mix.env() == :prod,
       test_coverage: [tool: ExCoveralls],
       lockfile: lockfile(),
-      preferred_cli_env: [
+      package: package(),
+      deps: deps(),
+      docs: docs()
+    ]
+  end
+
+  def cli do
+    [
+      preferred_envs: [
         coveralls: :test,
         "coveralls.detail": :test,
         "coveralls.post": :test,
         "coveralls.html": :test,
         "coveralls.travis": :test
-      ],
-      package: package(),
-      deps: deps(),
-      docs: docs()
+      ]
     ]
   end
 
@@ -33,7 +38,7 @@ defmodule Number.Mixfile do
 
   defp deps do
     [
-      {:decimal, "~> 1.5 or ~> 2.0"},
+      {:decimal, "~> 3.0"},
       {:excoveralls, ">= 0.16.0", only: :test},
       {:ex_doc, ">= 0.0.0", only: [:dev, :test]},
       {:inch_ex, ">= 0.0.0", only: [:dev, :test]}
